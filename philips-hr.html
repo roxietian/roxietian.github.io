@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Philips HR — Anchor Cards</title>
+<style>
+  :root{
+    --navy:#1F3864;
+    --navy-soft:#2e4a7a;
+    --ink:#1a1a1a;
+    --gray:#7F7F7F;
+    --line:#dfe4ec;
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --accent:#c2410c;     /* connector / structure eyebrow */
+    --metric:#0e7490;     /* numbers to NOT misremember */
+    --flag:#b91c1c;
+    --chip:#eef2f8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Calibri","Segoe UI",system-ui,-apple-system,sans-serif;
+    line-height:1.5;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:24px 20px 80px;}
+  header.top{
+    position:sticky;top:0;z-index:20;background:var(--bg);
+    padding:10px 0 12px;border-bottom:2px solid var(--navy);margin-bottom:18px;
+  }
+  header.top h1{margin:0;color:var(--navy);font-size:21px;letter-spacing:.3px;}
+  header.top .sub{color:var(--gray);font-size:13px;margin-top:2px;}
+  nav.jump{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+  nav.jump a{
+    text-decoration:none;font-size:12.5px;font-weight:600;
+    color:var(--navy);background:var(--chip);border:1px solid var(--line);
+    padding:4px 10px;border-radius:20px;
+  }
+  nav.jump a:hover{background:var(--navy);color:#fff;}
+
+  .section-title{
+    color:var(--navy);font-size:14px;font-weight:700;letter-spacing:1.5px;
+    text-transform:uppercase;margin:26px 0 12px;padding-left:2px;
+    border-left:4px solid var(--navy);padding:2px 0 2px 10px;
+  }
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  @media(max-width:860px){.grid{grid-template-columns:1fr;}}
+
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:14px 16px 16px;box-shadow:0 1px 2px rgba(31,56,100,.05);
+    break-inside:avoid;
+  }
+  .card.full{grid-column:1 / -1;}
+  .qhead{display:flex;align-items:baseline;gap:8px;margin-bottom:4px;}
+  .qnum{
+    color:#fff;background:var(--navy);font-weight:700;font-size:13px;
+    min-width:26px;height:24px;display:inline-flex;align-items:center;
+    justify-content:center;border-radius:6px;padding:0 6px;
+  }
+  .qtitle{color:var(--navy);font-size:16px;font-weight:700;}
+  .qcn{color:var(--gray);font-size:12.5px;font-weight:600;}
+  .struct{
+    font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.3px;
+    margin:6px 0 9px;text-transform:none;
+  }
+  ul.anchors{list-style:none;margin:0;padding:0;}
+  ul.anchors li{
+    position:relative;padding:3px 0 3px 16px;font-size:14px;border-top:1px dashed var(--line);
+  }
+  ul.anchors li:first-child{border-top:none;}
+  ul.anchors li::before{
+    content:"";position:absolute;left:2px;top:11px;
+    width:6px;height:6px;background:var(--navy-soft);
+    clip-path:polygon(0 0,100% 50%,0 100%);
+  }
+  .lead{color:var(--accent);font-weight:700;}
+  .m{color:var(--metric);font-weight:700;}
+  .sub-h{font-size:12.5px;font-weight:700;color:var(--navy);
+    margin:9px 0 3px;letter-spacing:.3px;}
+  .flag{
+    display:inline-block;color:var(--flag);font-weight:700;font-size:12px;
+    background:#fee2e2;border-radius:4px;padding:0 5px;margin-left:4px;
+  }
+  .ask li::before{background:var(--metric);}
+  .note{font-size:12px;color:var(--gray);margin-top:8px;font-style:italic;}
+  footer{margin-top:30px;color:var(--gray);font-size:12px;text-align:center;}
+  @media print{
+    body{background:#fff;}
+    header.top{position:static;}
+    nav.jump{display:none;}
+    .card{box-shadow:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Philips HR — Anchor Cards</h1>
+    <div class="sub">Look at structure + keywords only. Speak in your own words. First / Second / Finally.</div>
+    <nav class="jump">
+      <a href="#a">A · 基础 (1–6)</a>
+      <a href="#b">B · 角色·动机·公司 (7–11)</a>
+      <a href="#c">C · STAR (12–13)</a>
+      <a href="#d">D · 我要反问</a>
+    </nav>
+  </header>
+
+  <!-- ================= SECTION A ================= -->
+  <div class="section-title" id="a">A · 基础 / 我</div>
+  <div class="grid">
+
+    <!-- Q1 -->
+    <div class="card">
+      <div class="qhead"><span class="qnum">1</span><span class="qtitle">Self-intro</span><span class="qcn">自我介绍</span></div>
+      <div class="struct">Global background → 8yr + AI → Autel proof → Avant now → personal</div>
+      <ul class="anchors">
+        <li><span class="lead">Global citizen:</span> China / NZ / UK / NL — settled NL, <b>long term</b></li>
+        <li><span class="m">8+ yrs</span> service ops · digital products · delivery; last <span class="m">2 yrs</span> = AI into service</li>
+        <li>Autel: service + maintenance ecosystem <b>0→1</b>, <span class="m">5 platforms / 7 markets</span></li>
+        <li>AI hotline: discovery → pilot → rollout, <span class="m">50%+ automation</span></li>
+        <li>Now <b>Avant</b> (AI subsidiary): AI use-case strategy + prototype; business ↔ process ↔ tech</li>
+        <li>Personal: strength training + cello → keep energy up</li>
+      </ul>
+    </div>
+
+    <!-- Q2 -->
+    <div class="card">
+      <div class="qhead"><span class="qnum">2</span><span class="qtitle">Current role</span><span class="qcn">目前工作</span></div>
+      <div class="struct">Frame "3 relevant parts" → now → before → hotline → pattern</div>
+      <ul class="anchors">
+        <li><span class="lead">Frame:</span> "three most relevant parts"</li>
+        <li><span class="lead">Now:</span> Senior AI PM @ Avant; AI use-case discovery + strategy + PoC; robotic inspection</li>
+        <li>Check feasibility / value / risk / regulatory before go</li>
+        <li><span class="lead">Before:</span> owned <span class="m">5 platforms / 7 markets</span>; HQ + EU + partners + vendors; <span class="m">3,000+ users</span> (BP Pulse, Shell)</li>
+        <li>AI hotline 7 markets, <span class="m">1,000+/wk</span><span class="flag">⚠ 1k vs 8k — pick one</span>, <span class="m">50%+</span></li>
+        <li><span class="lead">Pattern:</span> idea → scalable; redesign workflows + align stakeholders = matches role</li>
+      </ul>
+    </div>
+
+    <!-- Q3 -->
+    <div class="card">
+      <div class="qhead"><span class="qnum">3</span><span class="qtitle">Career + why NL</span><span class="qcn">职业生涯 + 为什么荷兰</span></div>
+      <div class="struct">Theme "zero" → chronology → resilience → why NL → settled</div>
+      <ul class="anchors">
+        <li><span class="lead">Theme:</span> learning, adapting, building from <b>zero</b></li>
+        <li>Guangzhou digital media → NZ food-delivery startup (product / ops / CS / delivery, many hats)</li>
+        <li>UK Master's → back to China (COVID) → XGATE PO: CRM / e-com, Dyson, D&G</li>
+        <li><span class="m">2.5 yrs ago</span> → NL (orientation-year visa) → Autel → deeper EU service ops + AI</li>
+        <li>Rebuilt life from zero several times → resilient, adaptable</li>
+        <li><span class="lead">Why NL:</span> international, open, career <b>without losing individuality</b></li>
+        <li><span class="lead">Land:</span> not looking for next country — NL = career + life long term</li>
+      </ul>
+    </div>
+
+    <!-- Q4 -->
+    <div class="card">
+      <div class="qhead"><span class="qnum">4</span><span class="qtitle">Why leave</span><span class="qcn">为什么离开</span></div>
+      <div class="struct">Two honest reasons → bigger scale → Philips natural next</div>
+      <ul class="anchors">
+        <li><span class="lead">"Two honest reasons"</span></li>
+        <li><span class="lead">First:</span> HQ AI focus = China + US; Europe not top priority → team + resources limited → less room to grow / scale</li>
+        <li><span class="lead">Second:</span> know where I add most value — AI in real service ops; hotline worked; loved tech <b>beyond demo → real result</b></li>
+        <li>Want same direction, but stronger AI-in-Services support + bigger global reach</li>
+        <li>→ Philips = natural next step</li>
+      </ul>
+    </div>
+
+    <!-- Q5 -->
+    <div class="card">
+      <div class="qhead"><span class="qnum">5</span><span class="qtitle">Strength &amp; weakness</span><span class="qcn">优缺点</span></div>
+      <div class="struct">Strength + CEO quote → Weakness → managing it</div>
+      <ul class="anchors">
+        <li><span class="lead">Strength:</span> big-picture thinking + hands-on execution</li>
+        <li>PM + PO track record → grasp vision fast + practical solutions</li>
+        <li>Strong ownership: when blocked / unclear → stay close, push forward</li>
+        <li><span class="lead">CEO quote:</span> "pay you as PM, you deliver like a co-founder"</li>
+        <li><span class="lead">Weakness:</span> setting boundaries / saying no → too much work, overwhelmed</li>
+        <li>Aware → set priorities + manage expectations; work in progress</li>
+      </ul>
+    </div>
+
+    <!-- Q6 -->
+    <div class="card">
+      <div class="qhead"><span class="qnum">6</span><span class="qtitle">Build trust</span><span class="qcn">如何建立信任</span></div>
+      <div class="struct">Team (listen→act→align→share→contribution) + Stakeholder</div>
+      <div class="sub-h">团队 Team</div>
+      <ul class="anchors">
+        <li>Start: listen + observe (how team works, pain points)</li>
+        <li>Trust through <b>actions, not authority</b></li>
+        <li>Align manager + peers → seniority adds value, not distance</li>
+        <li>Share knowledge / frameworks — only when timing right</li>
+        <li>Earn place through <b>contribution, not title</b></li>
+      </ul>
+      <div class="sub-h">Stakeholder</div>
+      <ul class="anchors">
+        <li>Deliver on promises + transparent when things change</li>
+        <li>Trust = <b>consistency, not authority</b></li>
+        <li>Shell / BP Pulse: trust via reliable execution + clear comms, no formal authority</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ================= SECTION B ================= -->
+  <div class="section-title" id="b">B · 角色 · 动机 · 公司</div>
+  <div class="grid">
+
+    <!-- Q7 -->
+    <div class="card">
+      <div class="qhead"><span class="qnum">7</span><span class="qtitle">Why Philips / Why role</span><span class="qcn">为什么这个公司</span></div>
+      <div class="struct">Why Philips (purpose + healthcare bar) → Why role (AI → daily service)</div>
+      <div class="sub-h">Why Philips</div>
+      <ul class="anchors">
+        <li>Not AI for efficiency only — tech applied to <b>healthcare + lives</b></li>
+        <li>Healthcare: demo not enough → safe, compliant, reliable, trusted; else "smart toy"</li>
+        <li>Philips: AI at global scale → real difference to professionals + patients</li>
+      </ul>
+      <div class="sub-h">Why this role</div>
+      <ul class="anchors">
+        <li>Turns AI ideas into <b>daily service improvements</b></li>
+        <li>Find use cases → pilots → safety / governance → scale what people use</li>
+        <li>AI + service ops + adoption + measurable results = where I add value</li>
+      </ul>
+    </div>
+
+    <!-- Q8 -->
+    <div class="card">
+      <div class="qhead"><span class="qnum">8</span><span class="qtitle">Why me</span><span class="qcn">我能胜任的点</span></div>
+      <div class="struct">Four reasons: AI-in-service / Agile+Lean+6σ / fast learn / storytelling</div>
+      <ul class="anchors">
+        <li><span class="lead">One:</span> delivered AI in real service ops — hotline 7 markets, <span class="m">50%+</span>; RAG on GCP; Azure AI cert → technical + operational language</li>
+        <li><span class="lead">Two:</span> PMI-ACP + CSPO; Agile + Lean / Six Sigma <b>thinking</b>; workflow + root cause first → then AI vs automation vs redesign</li>
+        <li><span class="lead">Three:</span> learn fast; health tech new, but core same — uptime, quality, compliance, adoption, cost-to-serve</li>
+        <li><span class="lead">Finally:</span> storytelling — pain points → clear stories → non-tech teams trust + adopt</li>
+      </ul>
+    </div>
+
+    <!-- Q9 -->
+    <div class="card full">
+      <div class="qhead"><span class="qnum">9</span><span class="qtitle">AI experience + view</span><span class="qcn">AI 经验和看法</span></div>
+      <div class="struct">3 layers (production / prototyping / learning) → overall view</div>
+      <ul class="anchors">
+        <li><span class="lead">Frame:</span> three parts — real delivery, hands-on prototyping, continuous learning</li>
+        <li><span class="lead">1 Production:</span> Autel AI hotline 7 markets; built KB + workflows; <b>RAG retrieval</b>; managed quality / validation / escalation / adoption; <span class="m">8,000+/wk</span><span class="flag">⚠ match Q1/2/8</span>, <span class="m">50%+</span></li>
+        <li>+ charging-ops: NL queries → uptime / fault summaries; predictive maintenance (lifecycle + real-time)</li>
+        <li><span class="lead">2 Prototyping:</span> Avant AI use-case strategy + PoC, robotic inspection; GCP / Firebase; small internal tools</li>
+        <li><span class="lead">3 Learning:</span> Claude + Gemini daily (research / proto / coding); Azure AI cert</li>
+        <li><span class="lead">View:</span> AI valuable only inside real workflow; demo not enough → reliable data + business outcomes + human oversight + trust; regulated → privacy / safety / governance <b>designed in from start</b></li>
+      </ul>
+    </div>
+
+    <!-- Q10 -->
+    <div class="card">
+      <div class="qhead"><span class="qnum">10</span><span class="qtitle">Career goal / next role</span><span class="qcn">职业目标</span></div>
+      <div class="struct">No rigid plan → short → long → self-position → AI view</div>
+      <ul class="anchors">
+        <li>No rigid 3–5 yr plan (AI moves fast), but clear direction</li>
+        <li><span class="lead">Short:</span> delivery ops done well — launch readiness, workload visibility, vendor coordination, PoC→production predictable <span class="flag">⚠ retarget to "AI in services"?</span></li>
+        <li><span class="lead">Long:</span> execution → broader operational ownership; understand what works / breaks / breaks next → scalable operating model</li>
+        <li><span class="lead">Self-position:</span> not AI engineer — PO who speaks AI-eng language, turns concepts → usable products, bridges business + tech</li>
+        <li><span class="lead">AI view:</span> shortens idea→prototype→validated value; human judgement still key (hallucinations, right use case, what NOT to automate)</li>
+      </ul>
+    </div>
+
+    <!-- Q11 -->
+    <div class="card">
+      <div class="qhead"><span class="qnum">11</span><span class="qtitle">Comms + how managed</span><span class="qcn">沟通 + 如何被管理</span></div>
+      <div class="struct">Comms style (3) → how I'm managed best</div>
+      <div class="sub-h">沟通风格</div>
+      <ul class="anchors">
+        <li>Direct, transparent, open</li>
+        <li><span class="lead">First:</span> open to listening → find root cause faster</li>
+        <li><span class="lead">Second:</span> welcome feedback → not personal, chance to improve</li>
+        <li><span class="lead">Third:</span> adapt format — flowcharts / prototypes / demos; visual &gt; words</li>
+      </ul>
+      <div class="sub-h">如何被管理</div>
+      <ul class="anchors">
+        <li>Best with: transparency, clarity, trust, open comms</li>
+        <li>Clear context at start → move fast, right direction</li>
+        <li>Trust + room to execute once objective aligned</li>
+        <li>When things change → available for alignment + feedback</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ================= SECTION C ================= -->
+  <div class="section-title" id="c">C · STAR</div>
+  <div class="grid">
+
+    <!-- Q12 -->
+    <div class="card">
+      <div class="qhead"><span class="qnum">12</span><span class="qtitle">AI hotline rollout</span><span class="qcn">leadership · change · conflict</span></div>
+      <div class="struct">S&amp;T → Hook → Action → Result → Lesson</div>
+      <ul class="anchors">
+        <li><span class="lead">S&amp;T:</span> Autel, rollout multilingual AI hotline / 7 EU markets</li>
+        <li><span class="lead">Hook:</span> hardest part NOT building AI — getting 7 local teams to make it reliable enough to launch</li>
+        <li><span class="lead">Problem:</span> local teams validate KB in own language; busy + not their target → deprioritized → quality risk → stalling</li>
+        <li><span class="lead">Action:</span> understand concerns → reframe: "not reviewing content — building system that cuts YOUR repetitive tickets"; start 3 engaged markets; local experts own knowledge areas; short loop (local ↔ product ↔ HQ)</li>
+        <li><span class="lead">Result:</span> first 3 proved value; <span class="m">~50%</span> automation; others joined → all 7</li>
+        <li><span class="lead">Lesson:</span> change leadership = understand WHY resisting → make value real for them</li>
+      </ul>
+    </div>
+
+    <!-- Q13 -->
+    <div class="card">
+      <div class="qhead"><span class="qnum">13</span><span class="qtitle">CRM ecosystem 0→1</span><span class="qcn">0-1 · uncertain · stakeholder</span></div>
+      <div class="struct">S&amp;T → Hook → Action → Result → Lesson</div>
+      <ul class="anchors">
+        <li><span class="lead">S&amp;T:</span> build CRM service ecosystem from scratch, EV charging clients; each diff SLA / packages / permissions / reporting; no one had full picture</li>
+        <li><span class="lead">Hook:</span> no mature CRM infra in EU, no benchmark — not improving, <b>creating one</b></li>
+        <li><span class="lead">Action:</span> researched competitors → also immature, nothing to copy; didn't wait for requirements; interviewed clients + internal; studied contract logic; mapped standard vs configurable; aligned commercial + service + dev → standard core + flexible SLA / tiers / permissions; <b>chose flexibility over speed</b> (rigid → endless exceptions)</li>
+        <li><span class="lead">Result:</span> <span class="m">200+</span> enterprise clients, <span class="m">3,000+</span> users; benchmark in RFPs; manager amazed at independent work</li>
+        <li><span class="lead">Lesson:</span> in 0→1, don't wait for the benchmark — sometimes you build it</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ================= SECTION D ================= -->
+  <div class="section-title" id="d">D · 我要反问 (Reverse)</div>
+  <div class="grid">
+    <div class="card full">
+      <div class="qhead"><span class="qnum">?</span><span class="qtitle">Questions to ask them</span></div>
+      <ul class="anchors ask">
+        <li>Where does this role sit in the org, and how is the team structured?</li>
+        <li>Role is open across Europe — are you considering candidates from multiple countries? (understanding scope)</li>
+        <li>Work locations? (on-site 3 days/week confirm)</li>
+      </ul>
+      <div class="note">Salary note: ~6000 (gross/mo). Keep for the comp question — don't open with it.</div>
+    </div>
+  </div>
+
+  <footer>Anchor cards — triggers only. Short sentences, one idea each. You know the content; let the keywords pull the story.</footer>
+</div>
+</body>
+</html>
