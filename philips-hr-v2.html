@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Philips HR — Anchor Cards v2</title>
+<style>
+  :root{
+    --navy:#1F3864;--navy-soft:#2e4a7a;--ink:#1a1a1a;--gray:#7F7F7F;
+    --line:#dfe4ec;--bg:#f5f7fa;--card:#fff;--accent:#c2410c;
+    --metric:#0e7490;--flag:#b91c1c;--chip:#eef2f8;--sub:#e8edf5;--op:#9333ea;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Calibri","Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.5;}
+  .wrap{max-width:1280px;margin:0 auto;padding:24px 20px 80px;}
+  header.top{position:sticky;top:0;z-index:20;background:var(--bg);
+    padding:10px 0 12px;border-bottom:2px solid var(--navy);margin-bottom:16px;}
+  header.top h1{margin:0;color:var(--navy);font-size:21px;}
+  .legend{color:var(--gray);font-size:12px;margin-top:4px;}
+  .legend b{color:var(--op);}
+  .legend .tag{color:var(--navy);font-weight:700;}
+  nav.jump{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;}
+  nav.jump a{text-decoration:none;font-size:12.5px;font-weight:600;color:var(--navy);
+    background:var(--chip);border:1px solid var(--line);padding:4px 10px;border-radius:20px;}
+  nav.jump a:hover{background:var(--navy);color:#fff;}
+  .section-title{color:var(--navy);font-size:14px;font-weight:700;letter-spacing:1.5px;
+    text-transform:uppercase;margin:24px 0 12px;border-left:4px solid var(--navy);padding:2px 0 2px 10px;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start;}
+  @media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:680px){.grid{grid-template-columns:1fr;}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:12px 13px 13px;box-shadow:0 1px 2px rgba(31,56,100,.05);break-inside:avoid;}
+  .qhead{display:flex;align-items:baseline;gap:8px;margin-bottom:3px;flex-wrap:wrap;}
+  .qnum{color:#fff;background:var(--navy);font-weight:700;font-size:13px;min-width:26px;height:24px;
+    display:inline-flex;align-items:center;justify-content:center;border-radius:6px;padding:0 6px;}
+  .qtitle{color:var(--navy);font-size:15px;font-weight:700;}
+  .qcn{color:var(--gray);font-size:12px;font-weight:600;}
+  .struct{font-size:11.5px;color:var(--accent);font-weight:700;margin:6px 0 8px;}
+  .row{display:flex;gap:9px;padding:5px 0;border-top:1px dashed var(--line);}
+  .row:first-of-type{border-top:none;}
+  .step{flex:0 0 76px;color:var(--accent);font-weight:700;font-size:11px;padding-top:1px;}
+  .kw{flex:1;font-size:13px;}
+  .op{color:var(--op);font-weight:700;padding:0 1px;}
+  .m{color:var(--metric);font-weight:700;}
+  b{color:var(--navy);}
+  .sub-h{font-size:12px;font-weight:700;color:var(--navy);background:var(--sub);
+    border-radius:5px;padding:3px 8px;margin:9px 0 3px;display:inline-block;}
+  .flag{display:inline-block;color:var(--flag);font-weight:700;font-size:10.5px;
+    background:#fee2e2;border-radius:4px;padding:0 5px;margin-left:3px;}
+  .ask .step{flex:0 0 44px;}
+  .note{font-size:12px;color:var(--gray);margin-top:8px;font-style:italic;}
+  footer{margin-top:28px;color:var(--gray);font-size:12px;text-align:center;}
+  @media print{body{background:#fff;}header.top{position:static;}nav.jump{display:none;}.card{box-shadow:none;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Philips HR — Anchor Cards <span style="color:var(--gray);font-size:14px;">v2 · 详版</span></h1>
+    <div class="legend">
+      <b>&rarr;</b> 推进/导致 &nbsp; <b>&middot;</b> 并列 &nbsp; <b>vs</b> 取舍 &nbsp; <b>BUT</b> 转折 &nbsp;|&nbsp;
+      <span class="tag">深蓝加粗</span> = 你的原话题眼 &nbsp; <span style="color:var(--metric);font-weight:700;">青色</span> = 别记错的数字
+    </div>
+    <nav class="jump">
+      <a href="#a">A · 基础 (1–6)</a>
+      <a href="#b">B · 角色·动机·公司 (7–11)</a>
+      <a href="#c">C · STAR (12–13)</a>
+      <a href="#d">D · 反问</a>
+    </nav>
+  </header>
+
+  <!-- ===== A ===== -->
+  <div class="section-title" id="a">A · 基础 / 我</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">1</span><span class="qtitle">Self-intro</span><span class="qcn">自我介绍</span></div>
+      <div class="struct">Background &rarr; 8yr+AI &rarr; Autel &rarr; Avant &rarr; personal</div>
+      <div class="row"><div class="step">Background</div><div class="kw">China, NZ, UK, and now the Netherlands <span class="op">&rarr;</span> <b>this is where I want to build my career long term</b> <span class="op">&middot;</span> working across markets and cultures comes naturally</div></div>
+      <div class="row"><div class="step">Career</div><div class="kw"><span class="m">8+ yrs</span> in service operations <span class="op">&middot;</span> digital products <span class="op">&middot;</span> project delivery <span class="op">&rarr;</span> last <span class="m">2 yrs</span> = bringing AI into real service workflows</div></div>
+      <div class="row"><div class="step">Autel</div><div class="kw">built a digital service & maintenance ecosystem <b>from scratch</b> <span class="op">&rarr;</span> <span class="m">5 platforms / 7 markets</span></div></div>
+      <div class="row"><div class="step">Hotline</div><div class="kw">multilingual AI support hotline <span class="op">&middot;</span> <span class="m">1,000+/wk</span><span class="flag">⚠1k/8k</span> <span class="op">&rarr;</span> discovery <span class="op">&rarr;</span> pilot <span class="op">&rarr;</span> rollout <span class="op">&rarr;</span> <span class="m">50%+ automation</span></div></div>
+      <div class="row"><div class="step">Avant</div><div class="kw">moved internally to Avant (AI subsidiary) <span class="op">&rarr;</span> lead AI use-case strategy + prototype delivery <span class="op">&middot;</span> between business needs <span class="op">&middot;</span> service processes <span class="op">&middot;</span> technical teams</div></div>
+      <div class="row"><div class="step">Personal</div><div class="kw">strength training + cello <span class="op">&rarr;</span> both keep my energy up</div></div>
+    </div>
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">2</span><span class="qtitle">Current role</span><span class="qcn">目前工作</span></div>
+      <div class="struct">Frame &rarr; now &rarr; before &rarr; hotline &rarr; pattern</div>
+      <div class="row"><div class="step">Frame</div><div class="kw">I'll focus on the <b>three most relevant parts</b></div></div>
+      <div class="row"><div class="step">Now</div><div class="kw">Senior AI PM at Avant (AI subsidiary, Autel Group) <span class="op">&middot;</span> moved internally <span class="op">&rarr;</span> lead AI use-case discovery <span class="op">&middot;</span> product strategy <span class="op">&middot;</span> prototype delivery <span class="op">&rarr;</span> robotic inspection platform</div></div>
+      <div class="row"><div class="step">Check</div><div class="kw">look at feasibility <span class="op">&middot;</span> business value <span class="op">&middot;</span> risk <span class="op">&middot;</span> regulatory <span class="op">&rarr;</span> before we move forward</div></div>
+      <div class="row"><div class="step">Before</div><div class="kw">owned end-to-end delivery of <span class="m">5 platforms / 7 markets</span> <span class="op">&middot;</span> coordinated China HQ <span class="op">&middot;</span> EU ops <span class="op">&middot;</span> field partners <span class="op">&middot;</span> vendors <span class="op">&rarr;</span> <span class="m">3,000+ users</span> (BP Pulse, Shell)</div></div>
+      <div class="row"><div class="step">Hotline</div><div class="kw">AI support hotline / 7 markets <span class="op">&rarr;</span> <span class="m">1,000+/wk</span> <span class="op">&middot;</span> <span class="m">50%+</span> <span class="op">&middot;</span> cut first-line manual screening</div></div>
+      <div class="row"><div class="step">Pattern</div><div class="kw">I take complex systems from early ideas <span class="op">&rarr;</span> scalable implementation by <b>redesigning workflows + aligning stakeholders</b> = very close to what this role needs</div></div>
+    </div>
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">3</span><span class="qtitle">Career + why NL</span><span class="qcn">职业生涯 + 为什么荷兰</span></div>
+      <div class="struct">Theme &rarr; chronology &rarr; resilience &rarr; why NL &rarr; settled</div>
+      <div class="row"><div class="step">Theme</div><div class="kw">a journey of <b>learning <span class="op">&middot;</span> adapting <span class="op">&middot;</span> building from zero</b></div></div>
+      <div class="row"><div class="step">Start</div><div class="kw">Guangzhou digital media <span class="op">&rarr;</span> NZ food-delivery start-up (product design <span class="op">&middot;</span> <b>merchant operations</b> <span class="op">&middot;</span> customer service <span class="op">&middot;</span> project delivery) <span class="op">&rarr;</span> learn quickly <span class="op">&middot;</span> ownership beyond one job title</div></div>
+      <div class="row"><div class="step">UK&rarr;CN</div><div class="kw">Master's in the UK <span class="op">&rarr;</span> back to China during COVID, digital transformation <span class="op">&rarr;</span> PO at XGATE (CRM + e-commerce <span class="op">&middot;</span> Dyson <span class="op">&middot;</span> D&G)</div></div>
+      <div class="row"><div class="step">&rarr; NL</div><div class="kw"><span class="m">2.5 yrs ago</span> <span class="op">&rarr;</span> Netherlands via orientation-year visa + Autel <span class="op">&rarr;</span> deeper into EU service operations <span class="op">&middot;</span> digital platforms <span class="op">&middot;</span> AI</div></div>
+      <div class="row"><div class="step">Resilience</div><div class="kw">built products & teams 0&rarr;1 <span class="op">&middot;</span> <b>rebuilt my own life from zero several times</b> <span class="op">&rarr;</span> resilient <span class="op">&middot;</span> adaptable <span class="op">&middot;</span> comfortable in unfamiliar environments</div></div>
+      <div class="row"><div class="step">Why NL</div><div class="kw">value the international environment <span class="op">&middot;</span> the openness <span class="op">&middot;</span> building a career <b>without giving up their individuality</b></div></div>
+      <div class="row"><div class="step">Land</div><div class="kw">no longer looking for the next country <span class="op">&rarr;</span> <b>chosen the Netherlands to build my career and life long term</b></div></div>
+    </div>
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">4</span><span class="qtitle">Why leave</span><span class="qcn">为什么离开</span></div>
+      <div class="struct">Two reasons &rarr; bigger scale &rarr; Philips next</div>
+      <div class="row"><div class="step">Open</div><div class="kw">I have <b>two honest reasons</b></div></div>
+      <div class="row"><div class="step">First</div><div class="kw">group's AI focus is on China + US markets <span class="op">&middot;</span> <b>Europe isn't headquarters' top priority</b> <span class="op">&rarr;</span> team + resources here quite limited <span class="op">&rarr;</span> less room to grow and take it to a bigger scale</div></div>
+      <div class="row"><div class="step">Second</div><div class="kw">I already know where I add the most value <span class="op">&middot;</span> used AI to improve real service operations, the hotline worked very well <span class="op">&rarr;</span> <b>loved seeing the tech move beyond a demo &rarr; clear operational result</b></div></div>
+      <div class="row"><div class="step">Want</div><div class="kw">keep building in that direction <span class="op">&rarr;</span> BUT where <b>AI in Services has stronger support + a much bigger global reach</b></div></div>
+      <div class="row"><div class="step">&rarr; Philips</div><div class="kw">this Philips role feels like a <b>natural next step</b></div></div>
+    </div>
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">5</span><span class="qtitle">Strength & weakness</span><span class="qcn">优缺点</span></div>
+      <div class="struct">Strength + CEO quote &rarr; weakness &rarr; managing</div>
+      <div class="row"><div class="step">Strength</div><div class="kw">combining <b>big-picture thinking with hands-on execution</b></div></div>
+      <div class="row"><div class="step">Track</div><div class="kw">both product + project management <span class="op">&rarr;</span> understand the product vision quickly <span class="op">&rarr;</span> find practical solutions to move forward</div></div>
+      <div class="row"><div class="step">Ownership</div><div class="kw">when something important is blocked or unclear <span class="op">&rarr;</span> <b>stay close to it &rarr; help move it forward</b></div></div>
+      <div class="row"><div class="step">CEO quote</div><div class="kw"><i>"we pay you as a project manager, but you always deliver like a co-founder"</i></div></div>
+      <div class="row"><div class="step">Weakness</div><div class="kw">one area I've been improving is <b>setting boundaries</b> <span class="op">&middot;</span> uncomfortable saying no <span class="op">&rarr;</span> too much work <span class="op">&middot;</span> a little overwhelmed</div></div>
+      <div class="row"><div class="step">Manage</div><div class="kw">aware of it <span class="op">&rarr;</span> set priorities + manage expectations with customers and coworkers <span class="op">&rarr;</span> a work in progress</div></div>
+    </div>
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">6</span><span class="qtitle">Build trust</span><span class="qcn">如何建立信任</span></div>
+      <div class="struct">Team (listen&rarr;act&rarr;align&rarr;share&rarr;earn) + Stakeholder</div>
+      <span class="sub-h">团队 Team</span>
+      <div class="row"><div class="step">Start</div><div class="kw">listen + observe <span class="op">&rarr;</span> how the team currently works <span class="op">&middot;</span> what's going well <span class="op">&middot;</span> where the pain points are</div></div>
+      <div class="row"><div class="step">Trust</div><div class="kw">build trust <b>through actions, not authority</b></div></div>
+      <div class="row"><div class="step">Align</div><div class="kw">align with manager + peers <span class="op">&rarr;</span> my seniority adds value, rather than creating distance</div></div>
+      <div class="row"><div class="step">Share</div><div class="kw">share knowledge + frameworks <span class="op">&rarr;</span> <b>but only when the timing is right</b></div></div>
+      <div class="row"><div class="step">Earn</div><div class="kw">earn my place <b>through contribution, not title</b></div></div>
+      <span class="sub-h">Stakeholder</span>
+      <div class="row"><div class="step">Deliver</div><div class="kw">deliver on what I promise + be transparent when things change</div></div>
+      <div class="row"><div class="step">Consistency</div><div class="kw">trust comes from <b>consistency, not authority</b></div></div>
+      <div class="row"><div class="step">Proof</div><div class="kw">Shell + BP Pulse <span class="op">&rarr;</span> built trust through reliable execution + clear communication <span class="op">&middot;</span> without any formal authority</div></div>
+    </div>
+
+  </div>
+
+  <!-- ===== B ===== -->
+  <div class="section-title" id="b">B · 角色 · 动机 · 公司</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">7</span><span class="qtitle">Why Philips / role</span><span class="qcn">为什么这个公司</span></div>
+      <div class="struct">Why Philips (purpose + healthcare bar) &rarr; Why role</div>
+      <span class="sub-h">Why Philips</span>
+      <div class="row"><div class="step">1</div><div class="kw">not using AI just to improve efficiency <span class="op">&rarr;</span> applying technology to <b>healthcare + service operations that affect people's lives</b></div></div>
+      <div class="row"><div class="step">2</div><div class="kw">in healthcare a good demo is not enough <span class="op">&rarr;</span> safe <span class="op">&middot;</span> compliant <span class="op">&middot;</span> reliable <span class="op">&middot;</span> trusted <span class="op">&rarr;</span> otherwise <b>just a smart toy that changes nothing</b></div></div>
+      <div class="row"><div class="step">3</div><div class="kw">at Philips, AI improves services at <b>global scale</b> <span class="op">&rarr;</span> real difference to healthcare professionals + patients</div></div>
+      <span class="sub-h">Why this role</span>
+      <div class="row"><div class="step">1</div><div class="kw">it turns <b>AI ideas into daily service improvements</b></div></div>
+      <div class="row"><div class="step">2</div><div class="kw">finding valuable use cases <span class="op">&rarr;</span> running pilots <span class="op">&rarr;</span> building in safety + governance <span class="op">&rarr;</span> scaling the solutions people actually use</div></div>
+      <div class="row"><div class="step">3</div><div class="kw">that mix of AI <span class="op">&middot;</span> service operations <span class="op">&middot;</span> adoption <span class="op">&middot;</span> measurable results = exactly <b>where I add value</b></div></div>
+    </div>
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">8</span><span class="qtitle">Why me</span><span class="qcn">我能胜任的点</span></div>
+      <div class="struct">Four: AI-in-service / Agile+Lean+6σ / fast learn / storytelling</div>
+      <div class="row"><div class="step">First</div><div class="kw">already delivered AI within real service operations <span class="op">&middot;</span> hotline / 7 markets <span class="op">&middot;</span> <span class="m">1,000+/wk</span> <span class="op">&middot;</span> <span class="m">50%+</span> <span class="op">&middot;</span> prototype with RAG on GCP <span class="op">&middot;</span> Azure AI certified <span class="op">&rarr;</span> <b>speak both technical + operational language</b></div></div>
+      <div class="row"><div class="step">Second</div><div class="kw">PMI-ACP + CSPO <span class="op">&middot;</span> deliver with Agile <span class="op">&middot;</span> improve processes with <b>Lean + Six Sigma thinking</b> <span class="op">&rarr;</span> look at workflow + root cause first <span class="op">&rarr;</span> then decide AI <span class="op">vs</span> automation <span class="op">vs</span> process redesign</div></div>
+      <div class="row"><div class="step">Third</div><div class="kw">learn quickly <span class="op">&rarr;</span> health tech new <span class="op">&middot;</span> BUT core challenges familiar: uptime <span class="op">&middot;</span> quality <span class="op">&middot;</span> compliance <span class="op">&middot;</span> adoption <span class="op">&middot;</span> cost-to-serve</div></div>
+      <div class="row"><div class="step">Finally</div><div class="kw">good at storytelling <span class="op">&rarr;</span> turn technical pain points into clear stories + shared understanding <span class="op">&rarr;</span> helps <b>non-technical teams trust and adopt</b></div></div>
+    </div>
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">9</span><span class="qtitle">AI experience + view</span><span class="qcn">AI 经验和看法</span></div>
+      <div class="struct">3 parts (delivery / prototyping / learning) &rarr; view</div>
+      <div class="row"><div class="step">Frame</div><div class="kw">three parts <span class="op">&rarr;</span> <b>real service delivery <span class="op">&middot;</span> hands-on prototyping <span class="op">&middot;</span> continuous learning</b></div></div>
+      <div class="row"><div class="step">1 Delivery</div><div class="kw">Autel AI support hotline / 7 markets <span class="op">&rarr;</span> structured the knowledge base + service workflows <span class="op">&rarr;</span> <b>RAG-based retrieval</b> to answer technical support at scale</div></div>
+      <div class="row"><div class="step">&mdash; quality</div><div class="kw">not only generating an answer <span class="op">&rarr;</span> managed answer quality <span class="op">&middot;</span> validation <span class="op">&middot;</span> escalation <span class="op">&middot;</span> user adoption <span class="op">&rarr;</span> <span class="m">8,000+/wk</span><span class="flag">⚠match Q1/2/8</span> <span class="op">&middot;</span> <span class="m">50%+</span></div></div>
+      <div class="row"><div class="step">&mdash; charging</div><div class="kw">also charging-station use cases <span class="op">&rarr;</span> operators ask in natural language <span class="op">&rarr;</span> structured uptime + fault summaries <span class="op">&middot;</span> predictive maintenance (component lifecycle + real-time station status)</div></div>
+      <div class="row"><div class="step">2 Prototyping</div><div class="kw">at Avant <span class="op">&rarr;</span> AI use-case strategy + PoC for industrial AI (robotic inspection concept) <span class="op">&rarr;</span> built prototypes with GCP + Firebase <span class="op">&middot;</span> small internal tools</div></div>
+      <div class="row"><div class="step">3 Learning</div><div class="kw">use AI every day <span class="op">&rarr;</span> Claude + Gemini for research <span class="op">&middot;</span> prototyping <span class="op">&middot;</span> coding <span class="op">&middot;</span> Azure AI Fundamentals certified</div></div>
+      <div class="row"><div class="step">View</div><div class="kw">AI only valuable when part of a <b>real workflow</b> <span class="op">&rarr;</span> a good demo is not enough <span class="op">&rarr;</span> reliable data <span class="op">&middot;</span> clear business outcomes <span class="op">&middot;</span> human oversight <span class="op">&middot;</span> user trust <span class="op">&rarr;</span> regulated: <b>privacy &middot; safety &middot; governance designed in from the beginning</b>, not added at the end</div></div>
+    </div>
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">10</span><span class="qtitle">Career goal</span><span class="qcn">职业目标</span></div>
+      <div class="struct">No rigid plan &rarr; short &rarr; long &rarr; self-position &rarr; AI view</div>
+      <div class="row"><div class="step">Open</div><div class="kw">AI moves fast <span class="op">&rarr;</span> no rigid 3–5 year plan <span class="op">&middot;</span> but a clear direction</div></div>
+      <div class="row"><div class="step">Short</div><div class="kw">do delivery operations really well <span class="op">&rarr;</span> launch readiness <span class="op">&middot;</span> workload visibility <span class="op">&middot;</span> vendor coordination <span class="op">&middot;</span> predictable PoC-to-production <span class="flag">⚠retarget?</span></div></div>
+      <div class="row"><div class="step">Long</div><div class="kw">strong delivery execution <span class="op">&rarr;</span> <b>broader operational ownership</b> <span class="op">&rarr;</span> understand what's working <span class="op">&middot;</span> what's breaking <span class="op">&middot;</span> what will break next <span class="op">&rarr;</span> <b>a scalable operating model</b></div></div>
+      <div class="row"><div class="step">Self-pos</div><div class="kw"><b>not an AI engineer</b> <span class="op">&rarr;</span> a product owner who speaks the language of AI engineering <span class="op">&rarr;</span> turns AI concepts into usable products <span class="op">&rarr;</span> bridges business + technical delivery</div></div>
+      <div class="row"><div class="step">AI view</div><div class="kw">AI most powerful when it shortens idea <span class="op">&rarr;</span> prototype <span class="op">&rarr;</span> validated user value <span class="op">&middot;</span> BUT <b>human judgement still essential</b> <span class="op">&rarr;</span> catch hallucinations <span class="op">&middot;</span> define the right use case <span class="op">&middot;</span> decide what should not be automated</div></div>
+    </div>
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">11</span><span class="qtitle">Comms + managed</span><span class="qcn">沟通 + 如何被管理</span></div>
+      <div class="struct">Comms (3) &rarr; how managed best</div>
+      <span class="sub-h">沟通风格</span>
+      <div class="row"><div class="step">Style</div><div class="kw"><b>direct <span class="op">&middot;</span> transparent <span class="op">&middot;</span> open</b></div></div>
+      <div class="row"><div class="step">First</div><div class="kw">always open to listening <span class="op">&rarr;</span> different perspectives help me find the root cause faster</div></div>
+      <div class="row"><div class="step">Second</div><div class="kw">welcome constructive feedback <span class="op">&rarr;</span> never personal judgment <span class="op">&rarr;</span> an opportunity to improve</div></div>
+      <div class="row"><div class="step">Third</div><div class="kw">adapt format to the audience <span class="op">&rarr;</span> flowcharts <span class="op">&middot;</span> prototypes <span class="op">&middot;</span> live demos <span class="op">&rarr;</span> <b>sometimes visual is clearer than words</b></div></div>
+      <span class="sub-h">如何被管理</span>
+      <div class="row"><div class="step">Best</div><div class="kw">a manager who provides transparency <span class="op">&middot;</span> clarity <span class="op">&middot;</span> trust <span class="op">&middot;</span> open communication</div></div>
+      <div class="row"><div class="step">Context</div><div class="kw"><b>clear context at the start</b> <span class="op">&rarr;</span> I move quickly in the right direction</div></div>
+      <div class="row"><div class="step">Room</div><div class="kw">trust + room to execute <span class="op">&rarr;</span> once the objective is aligned</div></div>
+      <div class="row"><div class="step">Change</div><div class="kw">when something changes <span class="op">&rarr;</span> a manager available for alignment + feedback</div></div>
+    </div>
+
+  </div>
+
+  <!-- ===== C ===== -->
+  <div class="section-title" id="c">C · STAR</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">12</span><span class="qtitle">AI hotline rollout</span><span class="qcn">leadership · change · conflict</span></div>
+      <div class="struct">S&T &rarr; Hook &rarr; Action &rarr; Result &rarr; Lesson</div>
+      <div class="row"><div class="step">S&T</div><div class="kw">at Autel <span class="op">&rarr;</span> led the rollout of a multilingual AI hotline across <span class="m">7 European markets</span></div></div>
+      <div class="row"><div class="step">Hook</div><div class="kw"><b>the hardest part wasn't building the AI</b> <span class="op">&rarr;</span> getting 7 local teams to help make it reliable enough to launch</div></div>
+      <div class="row"><div class="step">Problem</div><div class="kw">each local team had to validate the knowledge content in its own language <span class="op">&middot;</span> busy with daily support <span class="op">&middot;</span> not part of their targets <span class="op">&rarr;</span> pushed down the list <span class="op">&rarr;</span> couldn't guarantee answer quality <span class="op">&rarr;</span> <b>rollout stalling</b></div></div>
+      <div class="row"><div class="step">Action</div><div class="kw">first understood their concerns <span class="op">&rarr;</span> changed the message + the plan: <b>"not reviewing content — building a system that reduces your own repetitive tickets"</b> <span class="op">&rarr;</span> started with 3 more engaged markets <span class="op">&rarr;</span> gave local experts ownership of specific knowledge areas <span class="op">&rarr;</span> short feedback loop (local <span class="op">&harr;</span> product <span class="op">&harr;</span> HQ)</div></div>
+      <div class="row"><div class="step">Result</div><div class="kw">first 3 markets proved the value <span class="op">&rarr;</span> <span class="m">~50% automation</span> <span class="op">&rarr;</span> remaining teams much more willing <span class="op">&rarr;</span> rolled out all 7</div></div>
+      <div class="row"><div class="step">Lesson</div><div class="kw">change leadership starts with understanding <b>why people resist &rarr; making the value real for them</b></div></div>
+    </div>
+
+    <div class="card">
+      <div class="qhead"><span class="qnum">13</span><span class="qtitle">CRM ecosystem 0&rarr;1</span><span class="qcn">0-1 · uncertain · stakeholder</span></div>
+      <div class="struct">S&T &rarr; Hook &rarr; Action &rarr; Result &rarr; Lesson</div>
+      <div class="row"><div class="step">S&T</div><div class="kw">build a CRM-based service ecosystem <b>from scratch</b> for major EV charging clients <span class="op">&rarr;</span> every client: different SLA models <span class="op">&middot;</span> service packages <span class="op">&middot;</span> permission structures <span class="op">&middot;</span> reporting needs <span class="op">&rarr;</span> <b>no single person had the full picture</b></div></div>
+      <div class="row"><div class="step">Hook</div><div class="kw">no mature CRM infrastructure in our European business <span class="op">&middot;</span> no industry benchmark <span class="op">&rarr;</span> <b>not improving an existing model · I had to create one</b></div></div>
+      <div class="row"><div class="step">Action</div><div class="kw">researched competitors <span class="op">&rarr;</span> their O&M also immature <span class="op">&middot;</span> nothing to copy <span class="op">&rarr;</span> didn't wait for requirements <span class="op">&rarr;</span> interviewed clients + internal teams <span class="op">&middot;</span> studied the contractual logic <span class="op">&middot;</span> mapped <b>standard <span class="op">vs</span> configurable</b> <span class="op">&rarr;</span> aligned commercial <span class="op">&middot;</span> service <span class="op">&middot;</span> dev: standard core + flexible SLA rules <span class="op">&middot;</span> service tiers <span class="op">&middot;</span> permission-based access <span class="op">&rarr;</span> <b>chose flexibility over speed-to-launch</b> (rigid <span class="op">&rarr;</span> endless exceptions)</div></div>
+      <div class="row"><div class="step">Result</div><div class="kw"><span class="m">200+ enterprise clients</span> <span class="op">&middot;</span> <span class="m">3,000+ verified users</span> <span class="op">&rarr;</span> became a benchmark used in RFPs <span class="op">&rarr;</span> manager amazed by how much I drove independently</div></div>
+      <div class="row"><div class="step">Lesson</div><div class="kw">in a zero-to-one project <span class="op">&rarr;</span> <b>you don't wait for the benchmark — sometimes you build it</b></div></div>
+    </div>
+
+  </div>
+
+  <!-- ===== D ===== -->
+  <div class="section-title" id="d">D · 我要反问 (Reverse)</div>
+  <div class="grid">
+    <div class="card">
+      <div class="qhead"><span class="qnum">?</span><span class="qtitle">Reverse Qs</span></div>
+      <div class="row ask"><div class="step">Q1</div><div class="kw">Where this role sits in the organisation <span class="op">&middot;</span> how the team is structured?</div></div>
+      <div class="row ask"><div class="step">Q2</div><div class="kw">Role open across Europe <span class="op">&rarr;</span> considering candidates from multiple countries? (scope)</div></div>
+      <div class="row ask"><div class="step">Q3</div><div class="kw">Work locations? (confirm on-site 3 days/week)</div></div>
+      <div class="note">Salary: ~6000 gross/mo — keep for comp question, don't open with it.</div>
+    </div>
+  </div>
+
+  <footer>意群触发 + 彩色箭头标关系。橙色连接词带你走结构 — First / Second / Hook / Action / Result。</footer>
+</div>
+</body>
+</html>
