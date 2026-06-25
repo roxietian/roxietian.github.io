@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Exotec · Thread Service Account Manager — Prompt Cards v2</title>
+<style>
+  :root{
+    --navy:#1F3864; --orange:#c2410c; --teal:#0e7490;
+    --purple:#9333ea; --red:#b91c1c; --gray:#7F7F7F;
+    --ink:#1a1a1a; --line:#e2e6ee; --bg:#f7f8fb; --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family:Calibri,"Segoe UI",system-ui,sans-serif;
+    margin:0; background:var(--bg); color:var(--ink); line-height:1.45;
+  }
+  .wrap{max-width:1400px; margin:0 auto; padding:14px 16px 60px;}
+  h1{color:var(--navy); font-size:21px; margin:6px 0 2px;}
+  .sub{color:var(--gray); font-size:13px; margin:0 0 12px;}
+
+  .bar{
+    position:sticky; top:0; z-index:50; background:rgba(247,248,251,.96);
+    backdrop-filter:blur(4px); border-bottom:1px solid var(--line);
+    display:flex; flex-wrap:wrap; gap:6px; align-items:center;
+    padding:8px 4px; margin-bottom:12px;
+  }
+  .bar a{
+    text-decoration:none; color:var(--navy); font-size:12.5px; font-weight:600;
+    border:1px solid var(--line); border-radius:6px; padding:4px 9px; background:#fff;
+  }
+  .bar a:hover{border-color:var(--navy);}
+  .spacer{flex:1}
+  .toggle{
+    border:1px solid var(--navy); background:var(--navy); color:#fff;
+    font-weight:700; font-size:12.5px; border-radius:6px; padding:5px 12px; cursor:pointer;
+  }
+  .toggle:hover{opacity:.9}
+
+  .meta{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:14px;}
+  .legend, .nums{
+    flex:1 1 320px; background:#fff; border:1px solid var(--line);
+    border-radius:8px; padding:9px 12px; font-size:12px;
+  }
+  .legend b{color:var(--navy)}
+  .legend .k{display:inline-block; margin:2px 10px 2px 0;}
+  .op{color:var(--purple); font-weight:700;}
+  .num{color:var(--teal); font-weight:700;}
+  .warn{color:var(--red); font-weight:600;}
+  .nums .t{color:var(--navy); font-weight:700; font-size:11.5px; letter-spacing:.3px; text-transform:uppercase;}
+  .nums .chip{display:inline-block; background:#ecfdff; border:1px solid #bae6fd;
+    color:var(--teal); font-weight:700; border-radius:5px; padding:2px 7px; margin:3px 5px 0 0; font-size:12px;}
+
+  .secttl{color:var(--navy); font-size:15px; font-weight:700; margin:22px 0 8px;
+    border-left:4px solid var(--navy); padding-left:8px;}
+
+  .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:680px){.grid{grid-template-columns:1fr;}}
+
+  .card{
+    background:var(--card); border:1px solid var(--line); border-top:3px solid var(--navy);
+    border-radius:8px; padding:11px 12px 13px; break-inside:avoid;
+  }
+  .card h3{color:var(--navy); font-size:14.5px; margin:0 0 6px;}
+  .skel{color:var(--orange); font-size:11.5px; font-weight:700; letter-spacing:.2px;
+    border-bottom:1px dashed #f0c9b3; padding-bottom:6px; margin-bottom:7px;}
+  .skel .op{color:var(--purple)}
+  .row{display:flex; gap:8px; align-items:flex-start; margin:5px 0;}
+  .conn{color:var(--orange); font-weight:700; font-size:11.5px; min-width:58px; flex-shrink:0; padding-top:1px;}
+  .chunk{font-size:13px; color:#222;}
+  .chunk b{color:var(--navy);}
+  .more{color:#444;}
+  body.lean .more{display:none;}
+  .note{margin-top:7px; font-size:11.5px; color:var(--red); background:#fff5f5;
+    border:1px solid #f3c9c9; border-radius:5px; padding:5px 7px;}
+  .note b{color:var(--red)}
+
+  footer{margin-top:26px; color:var(--gray); font-size:11.5px; text-align:center;}
+
+  @media print{
+    .bar,.toggle{display:none}
+    body.lean .more{display:inline}
+    .wrap{max-width:none}
+    .grid{grid-template-columns:repeat(2,1fr); gap:8px}
+    .card{break-inside:avoid}
+  }
+</style>
+</head>
+<body class="full">
+<div class="wrap">
+
+  <h1>Exotec — Thread Service Account Manager <span style="color:var(--gray);font-size:14px">· v2</span></h1>
+  <p class="sub">Fluent trigger phrases — verb-led, with connectors · still triggers, not a script · noindex</p>
+
+  <div class="bar">
+    <a href="#A">A · Me</a>
+    <a href="#B">B · Role·Motivation·Company</a>
+    <a href="#C">C · Service / Contract</a>
+    <a href="#D">D · STAR</a>
+    <a href="#E">E · My questions</a>
+    <span class="spacer"></span>
+    <button class="toggle" id="tg">View: FULL → switch to LEAN</button>
+  </div>
+
+  <div class="meta">
+    <div class="legend">
+      <b>Operators</b> &nbsp;
+      <span class="k"><span class="op">&rarr;</span> leads to / drives</span>
+      <span class="k"><span class="op">&middot;</span> parallel</span>
+      <span class="k"><span class="op">vs</span> trade-off</span>
+      <span class="k"><span class="op">BUT</span> turn</span><br>
+      <b>Colour</b> &nbsp;
+      <span class="k"><span style="color:var(--navy);font-weight:700">navy</span> = exact anchor word</span>
+      <span class="k"><span class="num">teal</span> = locked number</span>
+      <span class="k"><span class="warn">red</span> = ⚠ careful</span>
+      <span class="k"><span style="color:var(--orange);font-weight:700">orange</span> = structure</span>
+    </div>
+    <div class="nums">
+      <span class="t">Number lock — say these, no others</span><br>
+      <span class="chip">8+ yrs</span><span class="chip">7 markets</span><span class="chip">5 platforms</span>
+      <span class="chip">3,000+ users</span><span class="chip">200+ clients</span>
+      <span class="chip">~€1M/yr training</span><span class="chip">50%+ automation</span>
+      <span class="chip">1,000+/wk all channels</span><span class="chip">~50/day hotline peak</span>
+      <span class="chip">€75k+/yr gross</span>
+    </div>
+  </div>
+
+  <!-- ============ A · ME ============ -->
+  <div class="secttl" id="A">A · Me</div>
+  <div class="grid">
+
+    <div class="card">
+      <h3>1 · Self-intro</h3>
+      <div class="skel">International <span class="op">&rarr;</span> 8+ yrs <span class="op">&rarr;</span> Relevance <span class="op">&rarr;</span> Human</div>
+      <div class="row"><span class="conn">Intl</span><div class="chunk">I've lived across <b>China · NZ · UK · NL</b><span class="more"> — moved here ~2.5 yrs ago to build long term</span> <span class="op">&rarr;</span> working cross-market now comes naturally</div></div>
+      <div class="row"><span class="conn">Exp</span><div class="chunk">I bring <span class="num">8+ yrs</span> in service ops, digital products & project delivery<span class="more"> — last 2 yrs pushing AI into real service workflows</span></div></div>
+      <div class="row"><span class="conn">Now</span><div class="chunk">Right now I work on <b>industrial AI · a robotic inspection platform</b> <span class="op">BUT</span> before that I built EVSE service & maintenance across <span class="num">7</span> markets</div></div>
+      <div class="row"><span class="conn">Fit</span><div class="chunk">What's relevant here <span class="op">&rarr;</span> <b>robotics · service ops · delivery · product thinking</b>, connecting technical systems to real customer ops after deployment</div></div>
+      <div class="row"><span class="conn">Human</span><div class="chunk">Outside work I do strength training & cello<span class="more"> — both keep my energy up</span></div></div>
+      <div class="note"><b>⚠</b> lead with <b>service ops + robotics</b>. AI = tool, not headline.</div>
+    </div>
+
+    <div class="card">
+      <h3>2 · Current role</h3>
+      <div class="skel">Setup <span class="op">&rarr;</span> Robotics <span class="op">&rarr;</span> Service delivery <span class="op">&rarr;</span> Data/automation</div>
+      <div class="row"><span class="conn">Setup</span><div class="chunk">I'm Senior AI PM at <b>Avant Intelligence</b> <span style="color:var(--gray)">(AI subsidiary · Autel Group)</span><span class="more">, after moving internally from European service ops</span></div></div>
+      <div class="row"><span class="conn">1 Robotics</span><div class="chunk">First, robotics <span class="op">&rarr;</span> I lead use-case discovery, product strategy & prototype delivery<span class="more"> · weighing feasibility, value, risk, regulatory</span></div></div>
+      <div class="row"><span class="conn">2 Delivery</span><div class="chunk">Second, I owned <span class="num">5</span> platforms across <span class="num">7</span> markets <span class="op">&rarr;</span> coordinating China HQ, EU ops, partners, vendors, BP Pulse & Shell <span class="op">&rarr;</span> one hit <span class="num">3,000+</span> users</div></div>
+      <div class="row"><span class="conn">3 Data</span><div class="chunk">Third, I rolled out a multilingual <b>AI hotline</b> <span class="op">&rarr;</span> reaching <span class="num">50%+</span> automation and cutting first-line screening</div></div>
+      <div class="row"><span class="conn">Close</span><div class="chunk">So the pattern <span class="op">&rarr;</span> I take complex systems from idea to scalable delivery, blending PM, product & service ops</div></div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Career & why NL</h3>
+      <div class="skel">learning <span class="op">&middot;</span> adapting <span class="op">&middot;</span> building from zero</div>
+      <div class="row"><span class="conn">Start</span><div class="chunk">I started in digital media in <span style="color:var(--gray)">Guangzhou</span></div></div>
+      <div class="row"><span class="conn">NZ</span><div class="chunk">Then in NZ I joined a food-delivery start-up <span class="op">&rarr;</span> product, merchant ops, CS & delivery<span class="more"> · ownership beyond one title</span></div></div>
+      <div class="row"><span class="conn">UK&rarr;CN</span><div class="chunk">After my Master's in the UK, I returned to China in COVID <span class="op">&rarr;</span> digital transformation <span class="op">&rarr;</span> then PO at XGATE for Dyson & D&G</div></div>
+      <div class="row"><span class="conn">NL</span><div class="chunk">~2.5 yrs ago I moved to NL on the orientation-year visa <span class="op">&rarr;</span> joined Autel<span class="more">, going deeper into EU service ops, platforms & AI</span></div></div>
+      <div class="row"><span class="conn">Why NL</span><div class="chunk">Looking back, I've built 0&rarr;1 <span class="op">&middot;</span> and rebuilt my own life from zero <span class="op">&rarr;</span> I value <b>building a career without giving up individuality</b>, so I've chosen NL long term</div></div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Why leave</h3>
+      <div class="skel">Reason 1 <span class="op">&rarr;</span> Reason 2 <span class="op">&rarr;</span> Bridge to Exotec</div>
+      <div class="row"><span class="conn">R1</span><div class="chunk">First, the group's AI focus sits in China & US <span class="op">&rarr;</span> Europe isn't HQ's priority, so resources are limited <span class="op">&rarr;</span> less room to grow</div></div>
+      <div class="row"><span class="conn">R2</span><div class="chunk">Second, I know where I add most value <span class="op">&rarr;</span> I used AI on real service ops, the hotline worked <span class="op">&rarr;</span> I loved seeing tech move beyond a demo</div></div>
+      <div class="row"><span class="conn">Bridge</span><div class="chunk">So I want a <b>company where service ops are core to the business</b>, at global scale <span class="op">&rarr;</span> at Exotec the service relationship IS the business <span class="op">&rarr;</span> a natural next step</div></div>
+      <div class="note"><b>⚠</b> bridge lands on <b>"service is core"</b> — do NOT say "AI bigger stage".</div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Strength / Weakness</h3>
+      <div class="skel">Strength <span class="op">&rarr;</span> Weakness <span class="op">&rarr;</span> Managing it</div>
+      <div class="row"><span class="conn">Str</span><div class="chunk">My strength <span class="op">&rarr;</span> I combine big-picture thinking with hands-on execution<span class="more"> · grasp the vision fast, then move it practically</span> <span class="op">&rarr;</span> strong ownership when things stall</div></div>
+      <div class="row"><span class="conn">Quote</span><div class="chunk">My CEO put it as <b>"paid as a PM, but you deliver like a co-founder"</b></div></div>
+      <div class="row"><span class="conn">Weak</span><div class="chunk">What I'm improving <span class="op">&rarr;</span> setting boundaries <span class="op">&rarr;</span> <b>I tend to over-commit</b> and pile too much on</div></div>
+      <div class="row"><span class="conn">Manage</span><div class="chunk">But I'm aware of it <span class="op">&rarr;</span> so I set priorities & manage expectations <span class="op">&rarr;</span> it's a work in progress</div></div>
+      <div class="note"><b>⚠</b> say "over-commit", not "overwhelmed" (role wants rigorous/organized).</div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Build trust</h3>
+      <div class="skel">Team <span class="op">&rarr;</span> Stakeholder</div>
+      <div class="row"><span class="conn">Team</span><div class="chunk">With a team, I'd start by listening & observing <span class="op">&rarr;</span> then build <b>trust through actions vs authority</b><span class="more"> · align with manager & peers so seniority adds value, not distance · share frameworks only when timing's right</span></div></div>
+      <div class="row"><span class="conn"></span><div class="chunk">Bottom line <span class="op">&rarr;</span> I earn my place through contribution, not title</div></div>
+      <div class="row"><span class="conn">Stake</span><div class="chunk">With stakeholders, I deliver what I promise & stay transparent when things change <span class="op">&rarr;</span> <b>consistency vs authority</b> <span class="op">&rarr;</span> with Shell & BP Pulse I built trust with no formal authority</div></div>
+    </div>
+
+  </div>
+
+  <!-- ============ B ============ -->
+  <div class="secttl" id="B">B · Role · Motivation · Company</div>
+  <div class="grid">
+
+    <div class="card">
+      <h3>7 · Why Exotec / Why role</h3>
+      <div class="skel">Why company <span class="op">&rarr;</span> Why role <span class="op">&rarr;</span> Fit</div>
+      <div class="row"><span class="conn">Why co</span><div class="chunk">What draws me <span class="op">&rarr;</span> robotics + software + real service impact <span class="op">&rarr;</span> once a system's live it's part of the client's daily operation <span class="op">&rarr;</span> if robots stop, the warehouse stops <span class="op">&rarr;</span> so <b>reliability, maintenance, service quality & trust become critical</b></div></div>
+      <div class="row"><span class="conn">Why role</span><div class="chunk">The role itself <span class="op">&rarr;</span> <b>service account management + project management</b> <span class="op">&rarr;</span> not just the relationship, but owning the transition deployment&rarr;maintenance, tracking service, coordinating suppliers, watching SLA/KPI, turning recurring issues into improvement</div></div>
+      <div class="row"><span class="conn">Fit</span><div class="chunk">That mix <span class="op">&rarr;</span> robotics, service ops, adoption & measurable results <span class="op">&rarr;</span> exactly where I add value</div></div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Why me</h3>
+      <div class="skel">Robotics-in-service <span class="op">&rarr;</span> PM in tech env <span class="op">&rarr;</span> Product mindset in service</div>
+      <div class="row"><span class="conn">1</span><div class="chunk">First, I already do <b>robotics in a service context</b> <span class="op">&rarr;</span> the question isn't just does the robot work, but how it creates value in maintenance ops<span class="more"> · use cases, risks, workflows, handover</span></div></div>
+      <div class="row"><span class="conn">2</span><div class="chunk">Second, I bring PM in complex technical environments <span class="op">&rarr;</span> I ran <span class="num">7</span> markets across customers, engineering, field partners & China HQ<span class="more"> · planning, tracking, escalation, alignment, handover</span></div></div>
+      <div class="row"><span class="conn">3</span><div class="chunk">Third, I carry a <b>product mindset into service ops</b> <span class="op">&rarr;</span> not issue-by-issue, but spotting patterns behind recurring problems <span class="op">&rarr;</span> scalable workflows & KPI dashboards</div></div>
+      <div class="row"><span class="conn">Close</span><div class="chunk">So I connect the robotic system, the service operation & the customer account</div></div>
+    </div>
+
+    <div class="card">
+      <h3>9 · AI experience & view</h3>
+      <div class="skel">Delivery <span class="op">&rarr;</span> Prototyping <span class="op">&rarr;</span> Learning <span class="op">&rarr;</span> View</div>
+      <div class="row"><span class="conn">Deliver</span><div class="chunk">First, in real delivery <span class="op">&rarr;</span> I led the AI hotline across 7 markets on <b>RAG-based retrieval</b><span class="more"> · structuring KB, quality, validation, escalation, adoption</span></div></div>
+      <div class="row"><span class="conn"></span><div class="chunk"><span class="more">I also explored charging-station AI <span class="op">&rarr;</span> natural-language questions <span class="op">&rarr;</span> uptime/fault summaries & predictive maintenance</span></div></div>
+      <div class="row"><span class="conn">Proto</span><div class="chunk">Second, I build prototypes myself <span class="op">&rarr;</span> on GCP & Firebase, plus small internal tools</div></div>
+      <div class="row"><span class="conn">Learn</span><div class="chunk">Third, I keep learning <span class="op">&rarr;</span> Claude & Gemini daily, and Azure AI Fundamentals</div></div>
+      <div class="row"><span class="conn">View</span><div class="chunk">My view <span class="op">&rarr;</span> <b>AI only matters when it's part of a real workflow</b> <span class="op">&rarr;</span> a demo isn't enough <span class="op">&rarr;</span> it needs reliable data, business outcome, human oversight & trust <span class="op">&rarr;</span> in regulated settings, governance designed in from the start</div></div>
+      <div class="note"><b>⚠</b> if pushed on hotline volume: <span class="num">1,000+/wk = total inbound, all channels</span>; hotline = one channel, ~50/day peak, automated ~50% of high-freq L1.</div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Career goals</h3>
+      <div class="skel">Short term <span class="op">&rarr;</span> Long term <span class="op">&rarr;</span> Positioning</div>
+      <div class="row"><span class="conn">ST</span><div class="chunk">Short term <span class="op">&rarr;</span> I want to do <b>service delivery & account management really well in robotics</b> <span class="op">&rarr;</span> own the handover, get SLA/KPI visibility right, coordinate suppliers & spare parts <span class="op">&rarr;</span> turn recurring issues into reliability</div></div>
+      <div class="row"><span class="conn">LT</span><div class="chunk">Long term <span class="op">&rarr;</span> grow from execution into <b>broader ownership of the account</b> <span class="op">&rarr;</span> not just keep the contract healthy, but make it grow <span class="op">&rarr;</span> reliability & trust open the door to upsell</div></div>
+      <div class="row"><span class="conn">Pos</span><div class="chunk">I position myself as a <b>service-and-delivery person</b> who understands technical systems <span class="op">&rarr;</span> AI & automation are tools, not the goal</div></div>
+    </div>
+
+    <div class="card">
+      <h3>11 · Communication / How managed</h3>
+      <div class="skel">My style <span class="op">&rarr;</span> How I want to be managed</div>
+      <div class="row"><span class="conn">Style</span><div class="chunk">My style <span class="op">&rarr;</span> direct, transparent, open <span class="op">&rarr;</span> I listen to find root cause faster, welcome feedback without taking it personally, and adapt format <span class="op">&rarr;</span> flowcharts, prototypes, demos when <b>visual beats words</b></div></div>
+      <div class="row"><span class="conn">Managed</span><div class="chunk">I work best with <span class="op">&rarr;</span> transparency, clarity & trust <span class="op">&rarr;</span> give me <b>clear context up front</b>, then room to execute <span class="op">&rarr;</span> and stay available when things change</div></div>
+    </div>
+
+  </div>
+
+  <!-- ============ C ============ -->
+  <div class="secttl" id="C">C · Service / Contract (JD-specific)</div>
+  <div class="grid">
+
+    <div class="card">
+      <h3>12 · Upsell <span style="color:var(--gray);font-size:11px">(must-ask)</span></h3>
+      <div class="skel">Baseline <span class="op">&rarr;</span> What I built <span class="op">&rarr;</span> Why it worked</div>
+      <div class="row"><span class="conn">Base</span><div class="chunk">The baseline <span class="op">&rarr;</span> maintenance was tied to warranty <span class="op">&rarr;</span> <span class="num">~2 yrs</span> free, but spare parts carried different conditions <span class="op">BUT</span> our only revenue was paid warranty extensions</div></div>
+      <div class="row"><span class="conn">Built</span><div class="chunk">So I designed <b>tiered service packages</b> <span class="op">vs</span> one flat extension <span class="op">&rarr;</span> each with different SLA, parts coverage & response targets <span class="op">&rarr;</span> higher tiers, more value, more revenue</div></div>
+      <div class="row"><span class="conn"></span><div class="chunk">Then I turned the training & certification platform into revenue <span class="op">&rarr;</span> growing it to <span class="num">~€1M/yr</span></div></div>
+      <div class="row"><span class="conn">Why</span><div class="chunk">So the upsell didn't come from pushing sales <span class="op">&rarr;</span> it came from <b>structuring the service itself</b> <span class="op">&rarr;</span> trust in quality made packages & courses a recurring revenue layer</div></div>
+    </div>
+
+    <div class="card">
+      <h3>13 · Supplier & Partner mgmt <span style="color:var(--gray);font-size:11px">(must-ask)</span></h3>
+      <div class="skel">Early <span class="op">&rarr;</span> SLA structure <span class="op">&rarr;</span> System <span class="op">&rarr;</span> Two models</div>
+      <div class="row"><span class="conn">Early</span><div class="chunk">I manage SLAs from the start <span class="op">&rarr;</span> I get in at the <b>RFP stage</b>, not after signing</div></div>
+      <div class="row"><span class="conn">SLA</span><div class="chunk">Each client has a dedicated O&M contract <span class="op">&rarr;</span> with <b>Vattenfall</b> the SLA wasn't one number <span class="op">&rarr;</span> tiers of first-response, resolution, spare-parts <b>MTTF</b> & uptime <span class="op">&rarr;</span> and subnets across countries varied by market</div></div>
+      <div class="row"><span class="conn">System</span><div class="chunk">To handle that, we built a <b>multi-model, multi-architecture digital O&M system</b> <span class="op">&rarr;</span> carrying the whole chain supplier&rarr;customer&rarr;service provider in one structure</div></div>
+      <div class="row"><span class="conn">Models</span><div class="chunk">We ran two models <span class="op">&rarr;</span> direct <span class="op">&middot;</span> outsourced <span class="op">&rarr;</span> for outsourced partners the same SLA flowed down <span class="op">&rarr;</span> I monitored & enforced guarantees, parts availability & response</div></div>
+      <div class="note"><b>⚠</b> spare-parts metric = <b>MTTF (reliability)</b>; if asked "how do you measure parts?" don't mix it with availability / lead-time.</div>
+    </div>
+
+    <div class="card">
+      <h3>14 · Over-qualification <span style="color:var(--gray);font-size:11px">(likely probe)</span></h3>
+      <div class="skel">Not a step down <span class="op">&rarr;</span> Title <span class="op">vs</span> ownership <span class="op">&rarr;</span> Earn place</div>
+      <div class="row"><span class="conn">Frame</span><div class="chunk">I don't see it as a step down <span class="op">&rarr;</span> it's a <b>deliberate move into robotics service</b>, where I want to build long term</div></div>
+      <div class="row"><span class="conn">Value</span><div class="chunk">Title matters less to me <span class="op">vs</span> ownership & autonomy</div></div>
+      <div class="row"><span class="conn">Quote</span><div class="chunk">As a CEO once put it <span class="op">&rarr;</span> <b>"paid as a PM, delivered like a co-founder"</b> <span class="op">&rarr;</span> that's how I work whatever the level on paper</div></div>
+      <div class="row"><span class="conn">Close</span><div class="chunk">I'd rather earn my place through contribution than walk in on a title</div></div>
+    </div>
+
+    <div class="card">
+      <h3>15 · Availability</h3>
+      <div class="skel">Available early</div>
+      <div class="row"><span class="conn">Answer</span><div class="chunk">I'm <b>available to start early</b> <span class="op">&rarr;</span> flexible on timing <span class="op">&rarr;</span> happy to align on a date that works for the team</div></div>
+      <div class="note"><b>⚠</b> don't volunteer VSO / admin-leave detail. Give a specific date only if asked.</div>
+    </div>
+
+  </div>
+
+  <!-- ============ D · STAR ============ -->
+  <div class="secttl" id="D">D · STAR</div>
+  <div class="grid">
+
+    <div class="card">
+      <h3>16 · STAR — AI Hotline</h3>
+      <div class="skel">Hook <span class="op">&rarr;</span> S/T <span class="op">&rarr;</span> Action&times;4 <span class="op">&rarr;</span> Result <span class="op">&rarr;</span> Aha <span class="op">&rarr;</span> Lesson</div>
+      <div class="row"><span class="conn">Hook</span><div class="chunk">The <b>hardest part wasn't building the AI</b> <span class="op">&rarr;</span> my own local teams were quietly refusing to let it go live <span class="op">&rarr;</span> and honestly they had a point</div></div>
+      <div class="row"><span class="conn">S/T</span><div class="chunk">I led the hotline across 7 markets <span class="op">&rarr;</span> teams manually screened L1, with <span class="num">1,000+/wk</span> total inbound <span class="op">&rarr;</span> the problem was speed <span class="op">AND</span> scalability</div></div>
+      <div class="row"><span class="conn">Act 1</span><div class="chunk">So I sat with the teams <span class="op">&rarr;</span> two real concerns surfaced: extra validation work, and who's liable if AI is wrong</div></div>
+      <div class="row"><span class="conn">Act 2</span><div class="chunk">First I <b>clarified the use-case boundary</b> <span class="op">&rarr;</span> L1 & knowledge only, never repair, liability, SLA or closure</div></div>
+      <div class="row"><span class="conn">Act 3</span><div class="chunk">Then I mapped the reporting flow with R&D <span class="op">&rarr;</span> if it can't answer, it opens a Salesforce ticket <span class="op">&rarr;</span> into the O&M workflow</div></div>
+      <div class="row"><span class="conn">Act 4</span><div class="chunk">When validation stalled, I <b>started 3 pilot markets</b> <span class="op">&rarr;</span> reframed it as cutting their own L1 later <span class="op">&rarr;</span> and escalated for resources</div></div>
+      <div class="row"><span class="conn">Result</span><div class="chunk">Once 3 pilots proved value, all <span class="num">7</span> joined <span class="op">&rarr;</span> 100+ clients, <span class="num">~50/day</span> peak, <span class="num">~50%</span> automated, plus 24/7 coverage</div></div>
+      <div class="row"><span class="conn">Aha</span><div class="chunk">My aha <span class="op">&rarr;</span> <b>the hard part was designing trust, not building AI</b></div></div>
+      <div class="row"><span class="conn">Lesson</span><div class="chunk">I learned <span class="op">&rarr;</span> start with why people resist and make the value real <span class="op">&rarr;</span> AI adoption is a trust problem, solved by boundaries & accountability, not a better model</div></div>
+    </div>
+
+    <div class="card">
+      <h3>17 · STAR — 0-1 Service Ecosystem</h3>
+      <div class="skel">Hook <span class="op">&rarr;</span> S/T <span class="op">&rarr;</span> Aha <span class="op">&rarr;</span> Action <span class="op">&rarr;</span> Result <span class="op">&rarr;</span> Lesson</div>
+      <div class="row"><span class="conn">Hook</span><div class="chunk">The twist <span class="op">&rarr;</span> <b>my first client almost broke my own design</b> <span class="op">&rarr;</span> I built a CRM service ecosystem from scratch, no benchmark <span class="op">&rarr;</span> we shipped Shell-specific to hit a deadline <span class="op">&rarr;</span> then change requests flooded in</div></div>
+      <div class="row"><span class="conn">S/T</span><div class="chunk">It was <span class="num">5</span> connected platforms <span class="op">&rarr;</span> every client had different SLA, packages, permissions & reporting <span class="op">&rarr;</span> my job was to scale to hundreds, not just Shell</div></div>
+      <div class="row"><span class="conn">Aha</span><div class="chunk">When I dug in <span class="op">&rarr;</span> the requests weren't noise <span class="op">&rarr;</span> everything was hardcoded to one client <span class="op">&rarr;</span> <b>the product model itself wouldn't scale</b></div></div>
+      <div class="row"><span class="conn">Action</span><div class="chunk">So I rebuilt it <span class="op">&rarr;</span> <b>one standard core + a configurable rule layer</b> <span class="op">&rarr;</span> same workflow, only the rules differ <span class="op">&rarr;</span> engineering pushed back, so I used evidence not vision <span class="op">&rarr;</span> and rolled it out iteratively</div></div>
+      <div class="row"><span class="conn">Result</span><div class="chunk">Now onboarding became configuration <span class="op">vs</span> new development <span class="op">&rarr;</span> <span class="num">200+</span> clients, <span class="num">3,000+</span> users <span class="op">&rarr;</span> it killed repeated engineering & one-offs <span class="op">&rarr;</span> and became the benchmark</div></div>
+      <div class="row"><span class="conn">Lesson</span><div class="chunk">The lesson <span class="op">&rarr;</span> feedback works on two levels <span class="op">&rarr;</span> I now ask <b>"different process, or same process with different rules?"</b> <span class="op">&rarr;</span> a rule you configure, a process you build</div></div>
+    </div>
+
+    <div class="card">
+      <h3>18 · STAR — Training Platform</h3>
+      <div class="skel">Hook <span class="op">&rarr;</span> S/T <span class="op">&rarr;</span> Action&times;3 <span class="op">&rarr;</span> Result <span class="op">&rarr;</span> Aha <span class="op">&rarr;</span> Lesson</div>
+      <div class="row"><span class="conn">Hook</span><div class="chunk">The platform was the <b>mandatory gate to O&M</b> <span class="op">&rarr;</span> no cert, no access <span class="op">BUT</span> <span class="num">1,000+</span> techs were already trained & paid offline <span class="op">&rarr;</span> forcing a re-pay meant open resistance</div></div>
+      <div class="row"><span class="conn">S/T</span><div class="chunk">I owned it from zero <span class="op">&rarr;</span> its real job was the entry point to the whole ecosystem <span class="op">&rarr;</span> and the resistance was real: they wouldn't re-pay or repeat training</div></div>
+      <div class="row"><span class="conn">Act 1</span><div class="chunk">First, I ran a <b>free whitelist migration</b> <span class="op">vs</span> forcing a re-buy <span class="op">&rarr;</span> 1,000+ migrated free, one-time only, new courses still paid <span class="op">&rarr;</span> but P&L is the CEO's call, so I brought numbers, not just a request</div></div>
+      <div class="row"><span class="conn">Act 2</span><div class="chunk">Second, I scoped it beyond learning <span class="op">&rarr;</span> into a CRM & governance asset <span class="op">&rarr;</span> which opened <span class="num">~€1M/yr</span> in revenue & a feedback channel</div></div>
+      <div class="row"><span class="conn">Act 3</span><div class="chunk">Third, my real mistake <span class="op">&rarr;</span> I assumed PMs would self-onboard from guidelines <span class="op">&rarr;</span> they didn't <span class="op">&rarr;</span> so I treated it as capability, not docs <span class="op">&rarr;</span> flowcharts, role-plays, co-onboarding <span class="op">&rarr;</span> across <span class="num">10</span> PMs in <span class="num">6</span> countries</div></div>
+      <div class="row"><span class="conn">Result</span><div class="chunk">We reached <span class="num">3,000+</span> certified users & <span class="num">~€1M/yr</span> <span class="op">&rarr;</span> and best of all <b>it ran without me</b> <span class="op">&rarr;</span> one PM even pushed sales into revenue</div></div>
+      <div class="row"><span class="conn">Aha</span><div class="chunk">My real misjudgment <span class="op">&rarr;</span> assuming people absorb the why on their own <span class="op">&rarr;</span> <b>0&rarr;1 scales when operators own the why, not just the how</b></div></div>
+      <div class="row"><span class="conn">Lesson</span><div class="chunk">So now <span class="op">&rarr;</span> I treat enabling local owners as part of the build, not a handover at the end</div></div>
+    </div>
+
+  </div>
+
+  <!-- ============ E ============ -->
+  <div class="secttl" id="E">E · My questions</div>
+  <div class="grid">
+
+    <div class="card">
+      <h3>19 · Reverse questions + salary</h3>
+      <div class="skel">Org <span class="op">&middot;</span> Scope <span class="op">&middot;</span> Location <span class="op">&middot;</span> Comp</div>
+      <div class="row"><span class="conn">Q1</span><div class="chunk">Could you share where this role sits in the org, and how the team is structured?</div></div>
+      <div class="row"><span class="conn">Q2</span><div class="chunk">I saw it's open across Europe <span class="op">&rarr;</span> are you considering candidates from multiple countries? Just understanding the scope</div></div>
+      <div class="row"><span class="conn">Q3</span><div class="chunk">And what are the work locations?</div></div>
+      <div class="row"><span class="conn">Comp</span><div class="chunk"><span class="num">€75,000+ / year (gross)</span></div></div>
+      <div class="note"><b>⚠</b> NL often quoted incl. 8% holiday allowance. If asked monthly, convert calmly — don't freeze.</div>
+    </div>
+
+  </div>
+
+  <footer>Verb-led trigger phrases · switch to LEAN once the structure is in muscle memory · noindex,nofollow</footer>
+
+</div>
+
+<script>
+  var body = document.body, btn = document.getElementById('tg');
+  btn.addEventListener('click', function(){
+    if(body.classList.contains('full')){
+      body.classList.remove('full'); body.classList.add('lean');
+      btn.textContent = 'View: LEAN → switch to FULL';
+    } else {
+      body.classList.remove('lean'); body.classList.add('full');
+      btn.textContent = 'View: FULL → switch to LEAN';
+    }
+  });
+</script>
+</body>
+</html>
