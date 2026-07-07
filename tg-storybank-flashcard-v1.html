@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tangelo · Story Bank ×10 · STAR+Lesson</title>
+<style>
+:root{
+  --navy:#1F3864; --orange:#c2410c; --teal:#0e7490; --purple:#9333ea;
+  --red:#b91c1c; --gray:#7F7F7F; --line:#dcd7ce; --bg:#faf9f6; --card:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:10px}
+body{font-family:Calibri,'Segoe UI',Arial,sans-serif;background:var(--bg);color:#222;line-height:1.28}
+
+/* top bar: legend + toggle, one slim line */
+.bar{display:flex;align-items:center;gap:1.4rem;padding:.5rem 1rem;border-bottom:1px solid var(--line);background:var(--card);font-size:1.05rem}
+.bar h1{font-size:1.25rem;color:var(--navy);font-weight:700;white-space:nowrap}
+.legend{display:flex;gap:1.2rem;color:#444;flex-wrap:wrap}
+.legend .r{color:var(--purple);font-weight:700}
+.legend b{color:var(--navy)}
+.legend .n{color:var(--teal);font-weight:700}
+.legend .c{color:var(--orange);font-weight:700}
+.tgl{margin-left:auto;display:flex;gap:.4rem}
+.tgl button{font-family:inherit;font-size:1rem;padding:.25rem .8rem;border:1px solid var(--line);background:var(--card);border-radius:3px;cursor:pointer;color:var(--gray)}
+.tgl button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* deck: masonry columns — cards pack by content height, no forced whitespace */
+.deck{column-count:5;column-gap:.5rem;padding:.5rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:.5rem .55rem .35rem;break-inside:avoid;margin-bottom:.5rem}
+.card h2{font-size:1.15rem;color:var(--navy);font-weight:700;margin-bottom:.15rem}
+.card h2 small{color:var(--gray);font-weight:400;font-size:.9rem}
+.skel{color:var(--orange);font-weight:700;font-size:.92rem;letter-spacing:.02em;margin-bottom:.3rem;border-bottom:1px solid var(--line);padding-bottom:.25rem}
+.row{display:grid;grid-template-columns:2.9rem 1fr;gap:.35rem;margin-bottom:.28rem}
+.row .c{color:var(--orange);font-weight:700;font-size:.95rem}
+.row .t{font-size:1rem}
+b{color:var(--navy)}
+.n{color:var(--teal);font-weight:700}
+.r{color:var(--purple);font-weight:700}
+.g{color:var(--gray)}
+.w{color:var(--red);font-weight:700}
+.chk{color:var(--red)}
+.vf{display:none}
+body.full .vf{display:inline}
+body.full html{font-size:9.5px}
+
+/* risks — bottom, below the fold, never occupies first screen */
+.risks{padding:1rem 1.2rem 2rem;max-width:1100px}
+.risks h2{color:var(--red);font-size:1.3rem;margin-bottom:.5rem}
+.risks li{font-size:1.1rem;margin:.35rem 0 .35rem 1.4rem}
+
+@media(max-width:1400px){.deck{column-count:4}}
+@media(max-width:1000px){.deck{column-count:2}}
+@media(max-width:680px){.deck{column-count:1}}
+@media print{
+  @page{size:A4 landscape;margin:6mm}
+  html{font-size:8.2px}
+  .tgl{display:none}
+  .deck{column-count:5}
+  .risks{page-break-before:always}
+  .card{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <h1>Tangelo · Story Bank ×11</h1>
+  <div class="legend">
+    <span><span class="r">→</span> 推进/导致</span>
+    <span><span class="r">·</span> 并列</span>
+    <span><span class="r">vs</span> 取舍</span>
+    <span><span class="r">BUT</span> 转折</span>
+    <span><b>题眼</b></span>
+    <span><span class="n">数字</span></span>
+    <span><span class="c">结构</span></span>
+  </div>
+  <div class="tgl">
+    <button id="bl" class="on" onclick="setV(false)">v-lean</button>
+    <button id="bf" onclick="setV(true)">v-full</button>
+  </div>
+</div>
+
+<div class="deck">
+
+<!-- 1 AI Hotline -->
+<div class="card">
+  <h2>1 · AI Hotline <small>adoption</small></h2>
+  <div class="skel">S&amp;T → Action → Result → Aha → Lesson</div>
+  <div class="row"><div class="c">S&amp;T</div><div class="t"><span class="n">7 EU markets</span> · <span class="n">1,000+ req/wk</span> <span class="r">→</span> one RFP <span class="r">BUT</span> a <b>scaling problem</b>; hard part = <b>adoption</b>: extra validation work <span class="r">·</span> wrong-answer responsibility</div></div>
+  <div class="row"><div class="c">A</div><div class="t"><b>clear AI boundary</b> — L1 only, no repair/liability/SLA/closure <span class="r">→</span> <b>human handover</b> via Salesforce ticket <span class="r">→</span> O&amp;M workflow; <span class="n">3 pilot markets</span> first<span class="vf"> (language <span class="r">·</span> willingness <span class="r">·</span> customer importance)</span> <span class="r">·</span> escalated validation priority</div></div>
+  <div class="row"><div class="c">R</div><div class="t"><span class="n">7 markets</span> · <span class="n">200+ clients</span> · <span class="n">50% high-freq automated</span> · <b>24-hour coverage</b><span class="vf"> · <span class="n">50+ interactions/day</span> peak</span></div></div>
+  <div class="row"><div class="c">Aha</div><div class="t">hardest ≠ building AI <span class="r">→</span> <b>building trust</b></div></div>
+  <div class="row"><div class="c">L</div><div class="t"><b>adoption is a trust problem</b>: boundaries <span class="r">·</span> workflow <span class="r">·</span> human ownership<span class="vf">, not a better model</span></div></div>
+</div>
+
+<!-- 2 0-1 Ecosystem -->
+<div class="card">
+  <h2>2 · 0-1 Ecosystem <small>scalability</small></h2>
+  <div class="skel">Hook → S/T → Aha → Action → Result → Lesson</div>
+  <div class="row"><div class="c">Hook</div><div class="t"><b>zero-to-one scaling story</b>; shipped for Shell <span class="r">→</span> change-request flood</div></div>
+  <div class="row"><div class="c">S/T</div><div class="t"><span class="n">5 platforms</span><span class="vf"> (training · O&amp;M · config · tablet · hotline)</span>; job ≠ deliver Shell <span class="r">→</span> <b>make the model work for future clients</b></div></div>
+  <div class="row"><div class="c">Aha</div><div class="t">same process <span class="r">BUT</span> <b>rules different</b> (SLA · tiers · permissions) <span class="r">→</span> model <b>too client-specific</b></div></div>
+  <div class="row"><div class="c">A</div><div class="t"><b>standard core workflow + configurable rule layer</b>; eng pushback <span class="r">→</span> evidence: Shell CRs <span class="r">·</span> RFPs <span class="r">·</span> pipeline<span class="vf">; built epic by epic</span></div></div>
+  <div class="row"><div class="c">R</div><div class="t">new client = <b>configuration, not development</b>; <span class="n">200+ clients</span> · <span class="n">3,000+ users</span><span class="vf"> <span class="r">→</span> internal reference for EU service ops</span></div></div>
+  <div class="row"><div class="c">L</div><div class="t"><b>separate process from rules</b>: different process <span class="r">→</span> build <span class="r">vs</span> same process, different rules <span class="r">→</span> configure</div></div>
+</div>
+
+<!-- 3 Cross-PO -->
+<div class="card">
+  <h2>3 · Cross-PO Webhook</h2>
+  <div class="skel">S/T → Action → Result → Lesson</div>
+  <div class="row"><div class="c">S/T</div><div class="t">cert <span class="r">→</span> O&amp;M access; <b>nightly sync</b> = up to <span class="n">48h wait</span>; nothing "broken" <span class="r">BUT</span> journey fails on site; hard part = <b>ownership</b> — trigger sits on another PO's platform</div></div>
+  <div class="row"><div class="c">A</div><div class="t">make <b>business impact visible</b> (manual access · delays · complaints); "for Training it ends at the certificate <span class="r">BUT</span> for the customer…"; <b>reduce their work → one webhook</b>, my side owns matching <span class="r">·</span> permissions <span class="r">·</span> exceptions; control point: <b>first-time access only</b><span class="vf">, KAM confirms active user list</span></div></div>
+  <div class="row"><div class="c">R</div><div class="t">shipped <b>next sprint</b>; <span class="n">48h → &lt;5 min</span>; complaints stopped<span class="vf"> for one major account</span>; earlier involvement from their side</div></div>
+  <div class="row"><div class="c">L</div><div class="t"><b>feature-complete ≠ business-complete</b> <span class="r">→</span> agree the interface before design is fixed <span class="r">·</span> define success by the full journey</div></div>
+</div>
+
+<!-- 4 Priority -->
+<div class="card">
+  <h2>4 · Priority <small>uptime first</small></h2>
+  <div class="skel">Hook → S/T → Action → Aha → Result → Lesson</div>
+  <div class="row"><div class="c">Hook</div><div class="t"><span class="n">3 features</span> <span class="r">vs</span> one backend team; chose <b>uptime</b> <span class="r">vs</span> eng preferred diagnostics</div></div>
+  <div class="row"><div class="c">S/T</div><div class="t"><span class="n">100 sites</span> · <span class="n">5,000 → 40,000+ chargers</span> <span class="chk">[核实]</span>; <span class="n">~3 mo each</span> <span class="r">→</span> one approvable sequence <span class="w">⚠ 别说 "no backlog authority" → 说 shared capacity needed committee sign-off</span></div></div>
+  <div class="row"><div class="c">A</div><div class="t">key question: <b>"risk if we do NOT build this first?"</b> — uptime = regulator fines <span class="r">·</span> contract SLA terms <span class="r">·</span> <b>tender gate</b> (<span class="n">BP · MER · TotalEnergies</span>) <span class="r">vs</span> diagnostics = value after fault <span class="r">→</span> second<span class="vf"> <span class="r">·</span> spare parts = internal efficiency <span class="r">→</span> third; to eng: delay ≠ complexity disappears, it moves toward RFP deadlines</span></div></div>
+  <div class="row"><div class="c">Aha</div><div class="t">contracts almost same <span class="r">→</span> <b>configurable uptime engine</b>, excluded-downtime tags</div></div>
+  <div class="row"><div class="c">R</div><div class="t">all 3 in <span class="n">~3 quarters</span>; uptime = <b>RFP gate</b>, won nearly every major tender</div></div>
+  <div class="row"><div class="c">L</div><div class="t">prioritize by <b>the risk of waiting</b> <span class="r">·</span> explain why the others come later</div></div>
+</div>
+
+<!-- 5 BP/TE -->
+<div class="card">
+  <h2>5 · BP / TE Conflict</h2>
+  <div class="skel">S/T → Action → Result → Lesson</div>
+  <div class="row"><div class="c">S/T</div><div class="t">BP features <span class="n">2 wks</span> <span class="r">vs</span> TotalEnergies tender <span class="n">1 wk · 50+ questions</span>; different country teams <span class="r">→</span> protect BP <span class="r">·</span> support TE <span class="r">·</span> <b>avoid making leadership choose</b></div></div>
+  <div class="row"><div class="c">A</div><div class="t">① one meeting, boundary = <b>BP delivery not at risk</b>; ② found <b>reusable answers</b> BP already tested; ③ <b>AI-assisted tender workflow</b> — approved materials <span class="r">·</span> <b>mandatory SME review</b> <span class="r">·</span> searchable template library<span class="vf"> (SLA · escalation · spare parts · reporting · O&amp;M)</span></div></div>
+  <div class="row"><div class="c">R</div><div class="t">BP on time; TE submitted in <span class="n">1 week</span> <span class="r">→</span> won the bid <span class="chk">[核实]</span>; became standard tool<span class="vf"> (Shell · Vattenfall · Circle K · MER)</span></div></div>
+  <div class="row"><div class="c">L</div><div class="t">escalation ≠ always the answer <span class="r">→</span> <b>find what the projects already share</b>; resource conflict <span class="r">→</span> reusable knowledge process</div></div>
+</div>
+
+<!-- 6 Controlled exception -->
+<div class="card">
+  <h2>6 · Controlled Exception</h2>
+  <div class="skel">Hook → S/T → Action → Result → Lesson</div>
+  <div class="row"><div class="c">Hook</div><div class="t">policy allowed rejection <span class="r">BUT</span> treated as <b>controlled exception</b></div></div>
+  <div class="row"><div class="c">S/T</div><div class="t">EU chargers moved to Bangladesh <span class="r">→</span> failed; no service package <span class="r">→</span> find real cause <span class="r">·</span> right support level</div></div>
+  <div class="row"><div class="c">A</div><div class="t">ticket said "installation" <span class="r">BUT</span> real issue = <b>regional product mismatch</b>; split: technical <span class="r">·</span> relationship <span class="r">·</span> commercial; <b>no early promises</b> before facts<span class="vf"> (remote diagnosis + docs only)</span>; <span class="n">~10 chargers</span> confirmed <span class="r">→</span> escalate to <b>APAC = right owner</b></div></div>
+  <div class="row"><div class="c">R</div><div class="t">recall + local-market replacement; kept strategic customer <span class="r">·</span> <b>no unlimited responsibility</b>; client changed procurement<span class="vf"> — buys by final installation country</span></div></div>
+  <div class="row"><div class="c">L</div><div class="t">exception needs structure: <b>verify facts → limit promises → right owner → clear boundary</b></div></div>
+</div>
+
+<!-- 7 Iceland -->
+<div class="card">
+  <h2>7 · Iceland DDL <small>pressure</small></h2>
+  <div class="skel">S/T → Tension → Action → Result → Aha → Lesson</div>
+  <div class="row"><div class="c">S/T</div><div class="t">Iceland demo <span class="g">mid-Feb</span>, existing EV client; HQ promised English platform <span class="r">·</span> AWS/GDPR</div></div>
+  <div class="row"><div class="c">Tens</div><div class="t"><span class="g">mid-Jan</span>: Chinese only <span class="r">·</span> Huawei Cloud <span class="r">·</span> director resigned <span class="r">→</span> <span class="n">&lt;1 month</span>, date fixed</div></div>
+  <div class="row"><div class="c">A</div><div class="t"><b>backup plan to CEO first</b> — show nothing <span class="r">vs</span> <b>pretending it's ready</b>; built prototype (Claude · Firebase · GCP); <b>decided what it would NOT do</b>: real O&amp;M asset data <span class="r">BUT</span> robot/CV <b>simulated — clear internally</b></div></div>
+  <div class="row"><div class="c">R</div><div class="t">client impressed, asked roadmap/pilot <span class="r">BUT</span> HQ no owner/capacity <span class="r">→</span> <b>no funded POC</b>; prototype reused</div></div>
+  <div class="row"><div class="c">Aha</div><div class="t">optimized the meeting, didn't force early: <b>"if the client says yes, what next?"</b></div></div>
+  <div class="row"><div class="c">L</div><div class="t">before prototype <span class="r">→</span> <b>go/no-go</b>: who owns <span class="r">·</span> what evidence <span class="r">·</span> what resources</div></div>
+</div>
+
+<!-- 8 Migration -->
+<div class="card">
+  <h2>8 · Training Migration</h2>
+  <div class="skel">Hook → S/T → Action → Result → Lesson</div>
+  <div class="row"><div class="c">Hook</div><div class="t">looks like training <span class="r">BUT</span> real job = <b>control O&amp;M access</b> — no cert, no access</div></div>
+  <div class="row"><div class="c">S/T</div><div class="t"><span class="n">1,000+ techs</span> already paid offline <span class="r">→</span> migrate fairly <span class="r">·</span> protect revenue <span class="r">·</span> local ownership</div></div>
+  <div class="row"><div class="c">A</div><div class="t">① <b>free whitelist migration</b> = avoid double-charging, not free training <span class="r">→</span> <b>CEO sign-off</b><span class="vf">; import template per country → digital certificate codes linked to access</span>; ② rule: free = historical only <span class="r">vs</span> new = paid on platform; ③ wrong assumption — emails ≠ enough <span class="r">→</span> <b>1-by-1 enablement</b>: flowcharts <span class="r">·</span> scripts <span class="r">·</span> joined first calls</div></div>
+  <div class="row"><div class="c">R</div><div class="t"><span class="n">1,000+ migrated → 3,000+ certified</span>; revenue <span class="r">→</span> <span class="n">~€1M/yr</span> <span class="chk">[核实]</span>; platform <b>ran without me</b></div></div>
+  <div class="row"><div class="c">L</div><div class="t"><b>local enablement is part of the product build</b> — it scales when local owners run it without me</div></div>
+</div>
+
+<!-- 9 Dashboard -->
+<div class="card">
+  <h2>9 · Dashboard Before 0-1</h2>
+  <div class="skel">S/T → Action → Aha → Correction → Result → Lesson</div>
+  <div class="row"><div class="c">S/T</div><div class="t">fragmented intake (mailbox · WhatsApp · direct replies) <span class="r">→</span> management blind; task = <b>reporting model</b>: visible <span class="r">·</span> comparable</div></div>
+  <div class="row"><div class="c">A</div><div class="t"><b>start with definitions, not the dashboard</b> — first response <span class="r">·</span> pause/exclusion rules; <b>3-level fault structure</b>; SLA aligned to Shell/Vattenfall/MER contracts <span class="r">→</span> <span class="n">4 tiers</span>; <span class="n">1,000 inbound → ~200 valid B2B</span>/wk</div></div>
+  <div class="row"><div class="c">Aha</div><div class="t">Estonia batch failure handled <b>outside the system</b> <span class="r">→</span> missing from numbers <span class="r">→</span> CEO asked why</div></div>
+  <div class="row"><div class="c">Corr</div><div class="t">dashboard <span class="r">→</span> <b>service governance</b>: mandatory ticketing <span class="r">·</span> escalation rules <span class="r">·</span> biweekly review <span class="n">~30 ppl</span></div></div>
+  <div class="row"><div class="c">R</div><div class="t">reporting <span class="n">2-3h → ~0</span>; Airtable model = <b>prototype for the O&amp;M dashboard</b></div></div>
+  <div class="row"><div class="c">L</div><div class="t"><b>visibility alone does not change behavior</b> <span class="r">→</span> design governance with every metric<span class="vf"> / dashboard / AI workflow</span></div></div>
+</div>
+
+<!-- 10 AI Judgement -->
+<div class="card">
+  <h2>10 · AI Judgement <small>3 layers</small></h2>
+  <div class="skel">S/T → Action ×3 → Result → Aha → Lesson</div>
+  <div class="row"><div class="c">S/T</div><div class="t">real question ≠ "can we use AI" <span class="r">→</span> <b>"which part should AI handle — and which should not"</b><span class="vf"> (<span class="n">7 markets · 1,000+/wk</span>)</span></div></div>
+  <div class="row"><div class="c">A</div><div class="t">① <b>language layer</b> = GenAI — multilingual, users lack error codes <span class="r">→</span> guide to validated knowledge; ② <b>workflow layer</b> = AI prepares the case (intent · classification) <span class="r">BUT</span> <b>rules decide</b> — routing <span class="r">·</span> SLA <span class="r">·</span> status; ③ <b>accountability layer</b> = humans — safety <span class="r">·</span> contracts <span class="r">·</span> closure, with fallback <span class="r">→</span> Salesforce + O&amp;M</div></div>
+  <div class="row"><div class="c">R</div><div class="t"><span class="n">~50% L1</span> answered; <b>controlled service intake model</b>, not just automation</div></div>
+  <div class="row"><div class="c">Aha</div><div class="t">best AI ≠ AI everywhere <span class="r">→</span> <b>AI only where AI is better</b></div></div>
+  <div class="row"><div class="c">L</div><div class="t">3 questions first: <b>language problem? rules problem? judgement problem?</b></div></div>
+</div>
+
+<!-- 11 Vendor Handover -->
+<div class="card">
+  <h2>11 · Vendor Handover <small>external team</small></h2>
+  <div class="skel">S → T → A1…A5 (timeline) → R → L</div>
+  <div class="row"><div class="c">S</div><div class="t">outsourced voice-AI hotline; HQ <b>capability gap</b> <span class="r">→</span> <span class="n">7 markets waiting</span></div></div>
+  <div class="row"><div class="c">T</div><div class="t"><b>exit designed before the kickoff</b> — contract: scope <span class="r">·</span> AC <span class="r">·</span> UAT per market <span class="r">·</span> ownership <span class="r">·</span> handover <span class="r">→</span> <b>all fixed upfront</b></div></div>
+  <div class="row"><div class="c">A1</div><div class="t"><span class="n">3 months</span> together: stand-ups <span class="r">·</span> sprint reviews <span class="r">·</span> <b>same backlog, no black box</b></div></div>
+  <div class="row"><div class="c">A2</div><div class="t">changes: no side channels <span class="r">→</span> documented <span class="r">→</span> impact-assessed <span class="r">→</span> signed off <span class="r">→</span> backlog</div></div>
+  <div class="row"><div class="c">A3</div><div class="t">delivery: system + docs + deployment + admin access <span class="r">→</span> <b>acceptance item, not a favor</b></div></div>
+  <div class="row"><div class="c">A4</div><div class="t">transition <span class="n">~3 months</span>: bug fix <span class="r">·</span> training <span class="r">·</span> <b>KB → local experts</b><span class="vf">; escalation + monitoring in-house</span></div></div>
+  <div class="row"><div class="c">A5</div><div class="t">exit: out of daily dev <span class="r">→</span> <b>small support deal, engine only</b> — not open-ended dependency</div></div>
+  <div class="row"><div class="c">R</div><div class="t"><span class="n">7 markets</span> independent · <span class="n">50% automation</span> · <span class="n">−90% screening</span>; kept improving — updaters = <b>closest to the customers</b></div></div>
+  <div class="row"><div class="c">L</div><div class="t"><b>"The deliverable was never the system. It was our ability to own it after they left."</b></div></div>
+</div>
+
+</div><!-- /deck -->
+
+<div class="risks">
+  <h2>⚠ Risks — 上场前必须解决</h2>
+  <ul>
+    <li><span class="w">⚠ 用户数冲突</span>：通用 CV <span class="n">3,000+</span> <span class="r">vs</span> Tangelo CV <span class="n">2,000+ verified B2B</span> <span class="r">vs</span> story 8 <span class="n">3,000+</span>。统一口径：<b>3,000 certified，其中 ~2,000 B2B verified</b>，被追问再解释子集。</li>
+    <li><span class="w">⚠ 50% vs 90%</span>：两个指标，不许混用。story 11 的说法是标准口径：<span class="n">50% automation</span>（AI 直接回答 L1）+ <span class="n">−90% manual screening</span>（人工初筛工作量）。story 1/10 只提 50% 时保持一致。</li>
+    <li><span class="w">⚠ Seniority dilution 触发点</span>：story 4 原稿 "I had no formal backlog authority" 直接与 CV "Owned product roadmap and backlog" 冲突。改说 <b>shared backend capacity required committee sign-off</b> — ownership 语言不丢。</li>
+    <li><span class="w">⚠ Story 1 / 10 / 11 都是 Hotline 项目</span>。一场面试最多用两个不同角度：adoption/trust（1）<span class="r">vs</span> AI-scoping（10）<span class="r">vs</span> external vendor management（11 — 对 JD "managing external development teams" 命中率最高，优先）。数字全程一致：<span class="n">7 markets · 1,000/wk · 50% · −90%</span>。</li>
+    <li><span class="chk">[核实]</span>：<span class="n">40,000+ chargers</span>（story 4）· <span class="n">€1M/yr</span>（story 8）· TotalEnergies <b>won the bid</b>（story 5）— 三个都不在 CV，确认后再说。</li>
+    <li><span class="w">⚠ Story 7 结尾是 "no funded POC"</span>：诚实是加分，但 Lesson 必须落地到 Tangelo — go-live 之后的迭代同样需要 <b>go/no-go discipline</b>，别让故事停在失败上。</li>
+    <li><span class="g">JD 提示：go-live 写的是 end of June 2026，已过 — 面试重点大概率是 post-launch iteration/scaling → story 2（configure vs build）和 story 9（governance）优先级前移。</span></li>
+  </ul>
+</div>
+
+<script>
+function setV(full){
+  document.body.classList.toggle('full', full);
+  document.getElementById('bf').classList.toggle('on', full);
+  document.getElementById('bl').classList.toggle('on', !full);
+}
+</script>
+</body>
+</html>
