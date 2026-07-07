@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tangelo PO — English Logic v2</title>
+<style>
+  :root{
+    --navy:#1F3864; --orange:#c2410c; --teal:#0e7490; --purple:#9333ea;
+    --red:#b91c1c; --gray:#7F7F7F; --line:#e2e4ea; --bg:#fbfbfd;
+    --c-exp:#2563eb; --c-mot:#15803d; --c-fit:#ca8a04; --c-prod:#9333ea;
+    --c-ai:#0e7490; --c-ext:#c2410c; --c-ask:#db2777;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:Calibri,"Segoe UI",Arial,sans-serif;
+    font-size:8.9px; line-height:1.3; color:#1c2333; background:var(--bg);
+    padding:5px 8px;
+  }
+  .top{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:4px;}
+  .top h1{font-size:12.5px; color:var(--navy); letter-spacing:.2px;}
+  .top .sub{color:var(--gray); font-size:8.6px;}
+  .legend{margin-left:auto; font-size:8.2px; color:#444; display:flex; gap:9px; flex-wrap:wrap; align-items:center;}
+  .dot{display:inline-block; width:7px; height:7px; border-radius:2px; margin-right:2px; vertical-align:-1px;}
+
+  .grid{column-count:4; column-gap:6px;}
+  @media (max-width:1150px){ .grid{column-count:3;} body{font-size:9.4px;} }
+  @media (max-width:1000px){ .grid{column-count:2;} }
+  @media (max-width:680px){ .grid{column-count:1;} body{font-size:11px;} }
+
+  .card{
+    break-inside:avoid; background:#fff; border:1px solid var(--line);
+    border-left-width:3px; border-radius:6px; padding:4px 6px 5px; margin-bottom:6px;
+    box-shadow:0 1px 1px rgba(20,30,60,.04);
+  }
+  .exp{border-left-color:var(--c-exp);}   .mot{border-left-color:var(--c-mot);}
+  .fit{border-left-color:var(--c-fit);}   .prod{border-left-color:var(--c-prod);}
+  .ai{border-left-color:var(--c-ai);}     .ext{border-left-color:var(--c-ext);}
+  .ask{border-left-color:var(--c-ask);}
+
+  .qt{font-weight:bold; color:var(--navy); font-size:9.4px; margin-bottom:2px;}
+  table{border-collapse:collapse; width:100%;}
+  td{vertical-align:top; padding:1px 0;}
+  td.c{color:var(--orange); font-weight:bold; white-space:nowrap; padding-right:5px; width:1%; font-size:8.4px;}
+  b{color:var(--navy);}
+  .n{color:var(--teal); font-weight:bold;}
+  .s{color:var(--purple); font-weight:bold;}
+  .g{color:var(--gray);}
+  .quote{font-style:italic; color:#2a3350;}
+  .sig{color:var(--gray); font-size:8.3px;}
+
+  .risks{
+    border-top:1px solid #f1c6c6; padding:2px 2px 0; margin-top:2px;
+    font-size:8.2px; color:#5a1f1f; display:flex; flex-wrap:wrap; column-gap:16px;
+  }
+  .risks b{color:var(--red);}
+  .risks .n{color:var(--teal);}
+
+  @page{size:A4 landscape; margin:6mm;}
+  @media print{
+    body{background:#fff; padding:0; font-size:8.2px;}
+    .grid{column-count:4;}
+    .card{box-shadow:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>Tangelo PO — English Logic, Not Labels</h1>
+  <div class="sub">Follow the flow. One idea per sentence. Stop after the close.</div>
+  <div class="legend">
+    <span><span class="dot" style="background:var(--c-exp)"></span>experience</span>
+    <span><span class="dot" style="background:var(--c-mot)"></span>motivation</span>
+    <span><span class="dot" style="background:var(--c-fit)"></span>personal / team fit</span>
+    <span><span class="dot" style="background:var(--c-ai)"></span>AI</span>
+    <span><span class="dot" style="background:var(--c-ext)"></span>external / delivery</span>
+    <span><span class="dot" style="background:var(--c-prod)"></span>product thinking</span>
+    <span><span class="dot" style="background:var(--c-ask)"></span>ask</span>
+    <span><span class="s">→ + vs</span> logic</span>
+    <span><span class="n">teal</span> numbers</span>
+  </div>
+</div>
+
+<div class="grid">
+
+  <div class="card exp">
+    <div class="qt">Q1 · Tell me about yourself</div>
+    <table>
+      <tr><td class="c">Open</td><td><b>International PM/PO, NL long-term</b></td></tr>
+      <tr><td class="c">→</td><td><span class="n">8+ yrs</span> digital products / <b>AI-enabled workflows</b></td></tr>
+      <tr><td class="c">Current</td><td>industrial AI <span class="s">+</span> robotic inspection</td></tr>
+      <tr><td class="c">Autel</td><td><span class="n">5</span> service platforms / <span class="n">7</span> EU markets</td></tr>
+      <tr><td class="c">Tangelo</td><td><b>integration <span class="s">+</span> data workflow <span class="s">+</span> reporting <span class="s">+</span> stakeholders</b></td></tr>
+      <tr><td class="c">Close</td><td><b>product ownership <span class="s">+</span> technical delivery <span class="s">+</span> bridge</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card exp">
+    <div class="qt">Q2 · What is your current role?</div>
+    <table>
+      <tr><td class="c">Open</td><td>Senior AI Project Manager, Avant Intelligence</td></tr>
+      <tr><td class="c">→</td><td>industrial AI <span class="s">+</span> robotic inspection platform</td></tr>
+      <tr><td class="c">→</td><td>use-case discovery <span class="s">→</span> requirements <span class="s">→</span> pilot plan <span class="s">→</span> <b>delivery priority</b></td></tr>
+      <tr><td class="c">Check</td><td><b>feasibility</b>, data availability, workflow fit, risk, compliance</td></tr>
+      <tr><td class="c">Before</td><td>PO/PM for Autel Europe service platforms</td></tr>
+      <tr><td class="c">Tangelo</td><td><b>reporting workflows behind the screen</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card exp">
+    <div class="qt">Q3 · Career journey / why the Netherlands?</div>
+    <table>
+      <tr><td class="c">Pattern</td><td><b>learning, adapting, building from zero</b></td></tr>
+      <tr><td class="c">Guangzhou</td><td>digital media</td></tr>
+      <tr><td class="c">New Zealand</td><td>start-up product <span class="s">+</span> ops <span class="s">+</span> delivery</td></tr>
+      <tr><td class="c">UK</td><td>MSc engineering operations management</td></tr>
+      <tr><td class="c">China</td><td>CRM/e-commerce PO at XGATE</td></tr>
+      <tr><td class="c">Netherlands</td><td>Autel, European service platforms <span class="s">+</span> AI</td></tr>
+      <tr><td class="c">Close</td><td><b>I chose NL for long-term career and life</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card mot">
+    <div class="qt">Q4 · Why do you want to leave?</div>
+    <table>
+      <tr><td class="c">Open</td><td><b>Two honest reasons</b></td></tr>
+      <tr><td class="c">→</td><td>Autel physical AI priority: mainly China <span class="s">+</span> US</td></tr>
+      <tr><td class="c">→</td><td>Europe has limited team/resources <span class="s">→</span> <b>less room to scale</b></td></tr>
+      <tr><td class="c">→</td><td><b>I know where I add most value</b></td></tr>
+      <tr><td class="c">→</td><td>connecting systems, stakeholders, tools, and workflows <b>through software</b></td></tr>
+      <tr><td class="c">→</td><td>I want product-focused business process <span class="s">+</span> software delivery</td></tr>
+      <tr><td class="c">Close</td><td>Tangelo: <b>product itself is the core business</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card fit">
+    <div class="qt">Q5 · Strengths and weaknesses</div>
+    <table>
+      <tr><td class="c">Strength</td><td><b>big-picture thinking <span class="s">+</span> hands-on execution</b></td></tr>
+      <tr><td class="c">→</td><td>understand product vision quickly</td></tr>
+      <tr><td class="c">→</td><td>move delivery forward practically</td></tr>
+      <tr><td class="c">→</td><td><b>strong ownership</b> when work is blocked or unclear</td></tr>
+      <tr><td class="c">CEO</td><td>“<b>delivers like a co-founder</b>”</td></tr>
+      <tr><td class="c">Improving</td><td><b>boundaries</b></td></tr>
+      <tr><td class="c">→</td><td>sometimes uncomfortable saying no</td></tr>
+      <tr><td class="c">Now</td><td><b>prioritize, manage expectations, clarify trade-offs earlier</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card mot">
+    <div class="qt">Q6 · Why Tangelo / why this role?</div>
+    <table>
+      <tr><td class="c">Personal</td><td>Tangelo markets <b>mirror my life footprint</b></td></tr>
+      <tr><td class="c">Problem</td><td>familiar: <b>fragmented work <span class="s">→</span> controlled, collaborative, auditable workflow</b></td></tr>
+      <tr><td class="c">Autel</td><td>tickets, spare parts, warranty, systems, data <span class="s">→</span> <b>service ecosystem</b></td></tr>
+      <tr><td class="c">Reporting</td><td>familiar: <b>uptime, SLA, commissioning, repair reports</b></td></tr>
+      <tr><td class="c">Value</td><td>specialized enterprise product; <b>trust <span class="s">+</span> certainty over time</b></td></tr>
+      <tr><td class="c">Personal</td><td>research <span class="s">+</span> detail <span class="s">+</span> <b>chaos <span class="s">→</span> structure</b></td></tr>
+      <tr><td class="c">Close</td><td><b>different industry, same product logic</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card mot">
+    <div class="qt">Q7 · Why are you a strong fit?</div>
+    <table>
+      <tr><td class="c">Open</td><td>this role needs <b>more than a backlog owner</b></td></tr>
+      <tr><td class="c">→</td><td>complex data/reporting <b>product thinking</b></td></tr>
+      <tr><td class="c">→</td><td><b>internal <span class="s">+</span> external team coordination</b></td></tr>
+      <tr><td class="c">→</td><td><b>delivery momentum</b></td></tr>
+      <tr><td class="c">Proof</td><td><span class="n">8+ yrs</span> product/software/service transformation</td></tr>
+      <tr><td class="c">Autel</td><td>roadmap/backlog for <span class="n">5</span> platforms across <span class="n">7</span> EU markets</td></tr>
+      <tr><td class="c">→</td><td>reporting workflows <span class="s">+</span> external stakeholders <span class="s">+</span> external dev partners</td></tr>
+      <tr><td class="c">Close</td><td><b>zoom out for direction</b> and <b>zoom in for delivery</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card ai">
+    <div class="qt">Q8 · AI experience / view of AI</div>
+    <table>
+      <tr><td class="c">Layers</td><td>three: <b>delivery, prototyping, learning</b></td></tr>
+      <tr><td class="c">Delivery</td><td>multilingual AI support hotline, <span class="n">7</span> markets</td></tr>
+      <tr><td class="c">→</td><td><b>RAG knowledge base <span class="s">+</span> service workflows</b></td></tr>
+      <tr><td class="c">→</td><td><span class="n">1,000+</span> tickets/week; <span class="n">50%+</span> automation</td></tr>
+      <tr><td class="c">Proto</td><td>GCP/Firebase, industrial AI / robotic inspection</td></tr>
+      <tr><td class="c">View</td><td><b>AI only matters when embedded in a real workflow</b></td></tr>
+      <tr><td class="c">Needs</td><td>data, outcome, <b>human oversight</b>, trust, governance</td></tr>
+      <tr><td class="c">Close</td><td>treat <b>AI like a stakeholder</b>: context, challenge, <b>source-check</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card mot">
+    <div class="qt">Q9 · Career goals / next role</div>
+    <table>
+      <tr><td class="c">Open</td><td><b>no rigid <span class="n">3–5</span> year plan</b>; AI changes too fast</td></tr>
+      <tr><td class="c">Direction</td><td>join a company that <b>truly builds products</b></td></tr>
+      <tr><td class="c">→</td><td><b>go deeper into product work</b>, not one-off delivery</td></tr>
+      <tr><td class="c">→</td><td>keep learning AI’s <b>real value and limitations</b></td></tr>
+      <tr><td class="c">→</td><td>make <b>wise judgments before scaling ideas</b></td></tr>
+      <tr><td class="c">Builder</td><td>turn <b>business-value ideas into real products</b></td></tr>
+      <tr><td class="c">Close</td><td>keep building, learning, <b>staying curious</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card fit">
+    <div class="qt">Q10 · Communication style</div>
+    <table>
+      <tr><td class="c">Open</td><td><b>direct, transparent, open</b></td></tr>
+      <tr><td class="c">→</td><td><b>listen first</b> to understand perspectives and root cause</td></tr>
+      <tr><td class="c">→</td><td>welcome constructive feedback</td></tr>
+      <tr><td class="c">→</td><td><b>adapt format to the audience</b></td></tr>
+      <tr><td class="c">Tools</td><td>flowcharts, prototypes, live demos, dashboards</td></tr>
+      <tr><td class="c">Reason</td><td><b>visual can be clearer than words</b></td></tr>
+      <tr><td class="c">Close</td><td>communication <span class="s">=</span> <b>the right format for real alignment</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card fit">
+    <div class="qt">Q11 · How do you like to be managed?</div>
+    <table>
+      <tr><td class="c">Open</td><td>best with <b>clarity, trust, feedback, learning culture</b></td></tr>
+      <tr><td class="c">Start</td><td>business goal, context, constraints, <b>success criteria</b></td></tr>
+      <tr><td class="c">Then</td><td><b>trust and room to execute</b></td></tr>
+      <tr><td class="c">→</td><td>I can handle <b>ambiguity if the problem is clear</b></td></tr>
+      <tr><td class="c">Change</td><td>quick alignment and feedback</td></tr>
+      <tr><td class="c">Rhythm</td><td>direction check, blockers, review</td></tr>
+      <tr><td class="c">Close</td><td><b>independent, but not isolated</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card ext">
+    <div class="qt">Q12 · External development partners</div>
+    <table>
+      <tr><td class="c">Open</td><td>start with <b>delivery ownership</b></td></tr>
+      <tr><td class="c">Who</td><td>owns <b>requirements, architecture, testing, release</b>?</td></tr>
+      <tr><td class="c">Boundary</td><td><b>internal control <span class="s">vs</span> partner delivery</b></td></tr>
+      <tr><td class="c">Testable</td><td>stories <span class="s">+</span> acceptance criteria <span class="s">+</span> NFRs</td></tr>
+      <tr><td class="c">Gates</td><td>review, <b>UAT</b>, release readiness</td></tr>
+      <tr><td class="c">Change</td><td>scope, timeline, risk, cost</td></tr>
+      <tr><td class="c">Close</td><td>trust partners, <b>but keep product direction and accountability visible</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card prod">
+    <div class="qt">Q13 · Complex reporting/data product</div>
+    <table>
+      <tr><td class="c">Open</td><td>start from <b>the decision the report must support</b></td></tr>
+      <tr><td class="c">Who</td><td>reads it? customer, internal team, <b>auditor, regulator, investor</b>?</td></tr>
+      <tr><td class="c">What</td><td>question must it answer?</td></tr>
+      <tr><td class="c">Data</td><td>what data is needed, <b>where does it come from</b>?</td></tr>
+      <tr><td class="c">Workflow</td><td>what workflow <b>validates</b> it?</td></tr>
+      <tr><td class="c">Automate</td><td>what automated, <b>where does human approval stay</b>?</td></tr>
+      <tr><td class="c">Evidence</td><td>what <b>audit trail</b> / evidence is required?</td></tr>
+      <tr><td class="c">Close</td><td>reporting <span class="s">=</span> <b>process <span class="s">+</span> data <span class="s">+</span> trust</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card ask">
+    <div class="qt">Q14 · Ask: internal vs external development</div>
+    <table>
+      <tr><td class="c">Ask</td><td class="quote">“I noticed the team combines internal developers with external development partners. I’m curious about the long-term direction: is the goal to <b>internalize capability</b> on the partner platform, or to <b>reduce the platform dependency</b> itself? Those are <b>two very different roadmaps for me as a PO</b>.”</td></tr>
+      <tr><td class="c">Signal</td><td class="sig">delivery model risk <span class="s">+</span> strategic PO thinking</td></tr>
+    </table>
+  </div>
+
+  <div class="card ask">
+    <div class="qt">Q15 · Ask: renewal and value proof</div>
+    <table>
+      <tr><td class="c">Ask</td><td class="quote">“<b>Reporting is seasonal</b>. Clients feel the value intensely for a few months, then renewal comes right after the season ends. When clients hesitate at renewal, <b>what is usually the reason</b>? And is that why <b>ESG Collect matters strategically</b> — making the platform <b>valuable year-round</b>?”</td></tr>
+      <tr><td class="c">Signal</td><td class="sig">business sense without asking about churn directly</td></tr>
+    </table>
+  </div>
+
+  <div class="card ask">
+    <div class="qt">Q16 · Ask Robbert: ESG Collect data capture</div>
+    <table>
+      <tr><td class="c">Ask</td><td class="quote">“On ESG Collect, how does data actually enter the system? Is it mainly <b>role-based manual capture with evidence and sign-off</b>, or are you also seeing demand for <b>API integrations</b>? In my charging work, the hardest design balance was <b>human-validated data <span class="s">vs</span> automated feeds</b>. Automation is faster, but <b>audit trail needs human accountability</b>.”</td></tr>
+      <tr><td class="c">Signal</td><td class="sig">product <span class="s">+</span> technical <span class="s">+</span> audit trail thinking</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<div class="risks">
+  <span><b>⚠ tickets</b>: ops <span class="n">1,000+/wk</span>; AI <span class="n">50%+</span> L1 — two facts, don’t merge</span>
+  <span><b>⚠ “dev background?”</b> → not a career developer BUT APIs · SQL · GCP/Firebase prototypes → speak dev language</span>
+  <span><b>⚠ PO yrs</b>: “3+ across XGATE + Autel + current”</span>
+  <span><b>[核实]</b> go-live status (JD: end of June)</span>
+</div>
+
+</body>
+</html>
