@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tangelo PO — One-Pager</title>
+<style>
+  :root{
+    --navy:#1F3864; --orange:#c2410c; --teal:#0e7490; --purple:#9333ea;
+    --red:#b91c1c; --gray:#7F7F7F; --line:#e2e4ea; --bg:#fbfbfd;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:Calibri,"Segoe UI",Arial,sans-serif;
+    font-size:9.2px; line-height:1.32; color:#1c2333; background:var(--bg);
+    padding:6px 8px;
+  }
+  /* header */
+  .top{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:4px;}
+  .top h1{font-size:13px; color:var(--navy); letter-spacing:.2px;}
+  .top .sub{color:var(--gray); font-size:9px;}
+  .legend{margin-left:auto; font-size:8.6px; color:#444; display:flex; gap:10px; flex-wrap:wrap;}
+  .legend .sym{color:var(--purple); font-weight:bold;}
+  .legend .o{color:var(--orange); font-weight:bold;}
+  .legend .t{color:var(--teal); font-weight:bold;}
+  .legend .r{color:var(--red); font-weight:bold;}
+
+  /* risk footer — compact, one line */
+  .risks{
+    border-top:1px solid #f1c6c6; background:transparent;
+    padding:2px 2px 0; margin-top:2px; font-size:8.4px; color:#5a1f1f;
+    display:flex; flex-wrap:wrap; column-gap:16px; row-gap:0;
+  }
+  .risks b{color:var(--red);}
+  .risks .n{color:var(--teal); font-weight:bold;}
+
+  /* card grid: masonry via columns */
+  .grid{column-count:4; column-gap:6px;}
+  @media (max-width:1150px){ .grid{column-count:3;} body{font-size:9.6px;} }
+  @media (max-width:1000px){ .grid{column-count:2;} }
+  @media (max-width:680px){ .grid{column-count:1;} body{font-size:11px;} }
+
+  .card{
+    break-inside:avoid; background:#fff; border:1px solid var(--line);
+    border-radius:6px; padding:5px 6px 6px; margin-bottom:6px;
+    box-shadow:0 1px 1px rgba(20,30,60,.04);
+  }
+  .card.qcard{border-left:3px solid var(--navy);}
+  .card.section-b{border-left:3px solid var(--orange);}
+  .card.section-d{border-left:3px solid var(--purple);}
+  .qt{font-weight:bold; color:var(--navy); font-size:9.8px; margin-bottom:1px;}
+  .qt .tag{font-weight:normal; color:var(--gray); font-size:8.2px;}
+  .skel{color:var(--orange); font-weight:bold; font-size:8.6px; margin-bottom:3px; letter-spacing:.1px;}
+
+  table{border-collapse:collapse; width:100%;}
+  td{vertical-align:top; padding:1px 0;}
+  td.c{color:var(--orange); font-weight:bold; white-space:nowrap; padding-right:5px; width:1%; font-size:8.6px;}
+  b, strong{color:var(--navy);}
+  .n{color:var(--teal); font-weight:bold;}
+  .s{color:var(--purple); font-weight:bold;}
+  .g{color:var(--gray);}
+  .w{color:var(--red); font-weight:bold;}
+  .warnline{background:#fdf3f3; border-radius:3px; padding:1px 3px; display:block; margin-top:2px; color:#5a1f1f;}
+
+  /* print */
+  @page{size:A4 landscape; margin:6mm;}
+  @media print{
+    body{background:#fff; padding:0; font-size:8.4px;}
+    .grid{column-count:4;}
+    .card{box-shadow:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>Tangelo Software · Product Owner — Hiring Manager Round</h1>
+  <div class="sub">Erwin (CPO) · Robbert (PM) · one page, no scroll</div>
+  <div class="legend">
+    <span><span class="sym">→</span> leads to</span>
+    <span><span class="sym">·</span> parallel</span>
+    <span><span class="sym">vs</span> trade-off</span>
+    <span><span class="sym">BUT</span> contrast</span>
+    <span><span class="o">orange</span> = structure</span>
+    <span><span class="t">teal</span> = exact number</span>
+    <span><span class="r">⚠</span> = fix / verify</span>
+  </div>
+</div>
+
+<div class="grid">
+
+  <!-- A -->
+  <div class="card qcard">
+    <div class="qt">1 · Self intro <span class="tag">A · ~2 min</span></div>
+    <div class="skel">Journey → Work → Hook → Person → Outside</div>
+    <table>
+      <tr><td class="c">Journey</td><td>China <span class="s">·</span> NZ <span class="s">·</span> UK <span class="s">·</span> NL — <span class="w">⚠ “almost 3 yrs”</span> <span class="s">→</span> <b>build my career long term</b></td></tr>
+      <tr><td class="c">Work</td><td><span class="n">8+ yrs</span> digital products <span class="s">→</span> last <span class="n">2 yrs</span> <b>AI-enabled solutions</b> <span class="s">·</span> service &amp; maintenance</td></tr>
+      <tr><td class="c">Now</td><td>industrial AI <span class="s">·</span> robotic inspection <span class="s">→</span> early ideas <span class="s">→</span> <b>use cases · requirements · pilot plans</b></td></tr>
+      <tr><td class="c">Before</td><td>PO/PM, <span class="n">7 EU markets</span> <span class="s">→</span> <b>system integration · data workflows · reporting · dashboards</b></td></tr>
+      <tr><td class="c">Hook</td><td>EV charging <span class="s">→</span> already close to <b>energy transition · sustainability</b>; Tangelo = <b>a real product company</b></td></tr>
+      <tr><td class="c">Person</td><td>resilient <span class="s">→</span> <b>rebuilt my life from zero</b>; NL: productive <b>without giving up individuality</b></td></tr>
+      <tr><td class="c">Outside</td><td>gym <span class="n">3×/wk</span> <span class="s">·</span> cello <span class="s">→</span> first <b>Bach</b> piece <span class="s">BUT</span> still struggling <span class="s">·</span> enjoy the process</td></tr>
+    </table>
+  </div>
+
+  <div class="card qcard">
+    <div class="qt">2 · Current role <span class="tag">A</span></div>
+    <div class="skel">Now → Not only PM → Before → Reporting hook → AI → So</div>
+    <table>
+      <tr><td class="c">Now</td><td>Senior AI PM @ Avant <span class="s">→</span> <b>use-case discovery · product strategy · prototype delivery</b></td></tr>
+      <tr><td class="c">Not only</td><td>timeline <span class="s">BUT</span> feasible? data available? workflow makes sense? <span class="s">·</span> <b>risks · compliance</b></td></tr>
+      <tr><td class="c">Before</td><td>roadmap + backlog, <span class="n">5 platforms · 7 markets</span> <span class="s">→</span> Salesforce <span class="s">·</span> SAP <span class="s">·</span> O&amp;M <span class="s">·</span> dashboards</td></tr>
+      <tr><td class="c">Hook</td><td>preventive maintenance <span class="s">·</span> commissioning <span class="s">·</span> repair reports <span class="s">→</span> <b>reporting behind the screen</b>: sources <span class="s">→</span> workflow <span class="s">→</span> checked <span class="s">→</span> structured <span class="s">→</span> useful</td></tr>
+      <tr><td class="c">AI</td><td>multilingual hotline <span class="s">·</span> <span class="w">⚠</span> ops <span class="n">1,000+ tickets/wk</span> <span class="s">→</span> AI <span class="n">50% L1</span></td></tr>
+      <tr><td class="c">So</td><td>complex technical / data / workflow problems <span class="s">→</span> <b>usable software products</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card qcard">
+    <div class="qt">3 · Career journey <span class="tag">A</span></div>
+    <div class="skel">Start → NZ → UK → XGATE → NL → Lesson</div>
+    <table>
+      <tr><td class="c">Start</td><td>digital media, Guangzhou</td></tr>
+      <tr><td class="c">NZ</td><td>food-delivery start-up <span class="s">→</span> product <span class="s">·</span> <b>merchant operations</b> <span class="s">·</span> CS <span class="s">→</span> <b>ownership beyond one job title</b></td></tr>
+      <tr><td class="c">UK</td><td>Master’s <span class="s">→</span> COVID return <span class="s">→</span> XGATE PO: Dyson <span class="s">·</span> D&amp;G</td></tr>
+      <tr><td class="c">NL</td><td><span class="w">⚠ same yrs as Q1</span> <span class="s">·</span> orientation-year visa <span class="s">→</span> Autel <span class="s">→</span> EU service ops <span class="s">·</span> platforms <span class="s">·</span> AI</td></tr>
+      <tr><td class="c">Lesson</td><td>built products 0→1 <span class="s">·</span> <b>rebuilt my own life from zero</b> <span class="s">→</span> resilient <span class="s">·</span> adaptable</td></tr>
+      <tr><td class="c">Close</td><td>curiosity <span class="s">→</span> grow <span class="s">BUT</span> NL feels different <span class="s">→</span> <b>chosen NL long term</b> <span class="w">⚠ skip if said in Q1</span></td></tr>
+    </table>
+  </div>
+
+  <div class="card qcard">
+    <div class="qt">4 · Why leave <span class="tag">A</span></div>
+    <div class="skel">Two honest reasons → Bridge</div>
+    <table>
+      <tr><td class="c">First</td><td>group’s physical-AI focus <span class="s">→</span> China + US <span class="s">vs</span> Europe not top priority <span class="s">→</span> limited team + resources <span class="s">→</span> <b>less room to grow</b></td></tr>
+      <tr><td class="c">Second</td><td><b>I know where I add the most value</b>: connect systems <span class="s">·</span> stakeholders <span class="s">·</span> tools <span class="s">→</span> operational problems <span class="s">→</span> <b>scalable software workflows</b></td></tr>
+      <tr><td class="c">Bridge</td><td>want a company where <b>the product itself is the core business</b> <span class="s">→</span> Tangelo</td></tr>
+    </table>
+  </div>
+
+  <div class="card qcard">
+    <div class="qt">5 · Strength / weakness <span class="tag">A</span></div>
+    <div class="skel">Strength → Ownership → Weakness → Recovery</div>
+    <table>
+      <tr><td class="c">Strength</td><td><b>big-picture + hands-on execution</b> <span class="s">·</span> PdM + PM track record</td></tr>
+      <tr><td class="c">Proof</td><td>blocked or unclear <span class="s">→</span> stay close <span class="s">·</span> move forward; CEO: <b>“pay you as a PM, deliver like a co-founder”</b></td></tr>
+      <tr><td class="c">Weakness</td><td><b>setting boundaries</b> <span class="s">→</span> uncomfortable saying no</td></tr>
+      <tr><td class="c">Recovery</td><td><span class="s">BUT</span> aware <span class="s">→</span> <b>set priorities · manage expectations</b> <span class="s">·</span> work in progress <span class="w">⚠ one line — don’t expand “overwhelmed”</span></td></tr>
+    </table>
+  </div>
+
+  <!-- B -->
+  <div class="card section-b">
+    <div class="qt">6 · Why Tangelo <span class="tag">B · five reasons</span></div>
+    <div class="skel">1 → 2 → 3 → 4 → 5 → Sum</div>
+    <table>
+      <tr><td class="c">1 Personal</td><td>markets <b>mirror my own life footprint</b> <span class="s">→</span> ANZ (NZ) <span class="s">·</span> Basic-Fit <span class="s">·</span> Odido (daily life) <span class="s">→</span> end-user passion</td></tr>
+      <tr><td class="c">2 Problem</td><td><b>fragmented processes → one clear path</b>; service ecosystem 0→1, <span class="n">7 markets</span> <span class="s">→</span> <b>controlled · collaborative · auditable workflow</b></td></tr>
+      <tr><td class="c">3 Reporting</td><td>not new: <b>uptime reports</b> <span class="s">→</span> government <span class="s">·</span> transparency <span class="s">·</span> ESG; asset-mgmt platform = <b>report-assembly</b> <span class="s">→</span> Big Four audits <span class="s">·</span> valuations <span class="s">·</span> legal opinions <span class="s">→</span> <b>multi-party collection · audit-level control</b></td></tr>
+      <tr><td class="c">4 Values</td><td>XGATE since <span class="g">2004</span> <span class="s">→</span> loyal clients (Kipling <span class="s">·</span> D&amp;G <span class="s">·</span> <span class="w">[核实]</span> Chanel · Harbour City) <span class="s">→</span> <b>low churn · specialized &amp; trusted</b>; Tangelo: annual reports <span class="s">→</span> ESG Collect <span class="s">→</span> AI = <b>product depth</b>; enterprises buy <b>certainty · trust</b></td></tr>
+      <tr><td class="c">5 Me</td><td>resilient <span class="s">·</span> detail-oriented <span class="s">→</span> strength for <b>compliance-heavy</b>; <b>find direction in chaos</b> <span class="s">→</span> <b>information intelligence</b></td></tr>
+      <tr><td class="c">Sum</td><td>different industry <span class="s">BUT</span> <b>familiar kind of problem</b> <span class="s">→</span> <b>dots I want to keep connecting</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card section-b">
+    <div class="qt">7 · Why me <span class="tag">B</span></div>
+    <div class="skel">Thesis → Scale → Reporting → External → AI → Culture</div>
+    <table>
+      <tr><td class="c">Thesis</td><td>role needs <b>more than a normal backlog owner</b></td></tr>
+      <tr><td class="c">Scale</td><td><span class="n">8+ yrs</span> <span class="s">·</span> <span class="n">5 platforms · 7 markets</span> <span class="s">→</span> Salesforce <span class="s">·</span> SAP <span class="s">·</span> partners</td></tr>
+      <tr><td class="c">Zoom</td><td><b>product · project · service</b> — <span class="n">3</span> lifecycle lenses <span class="s">·</span> esp. <b>0-to-1 · growth stages</b>; discovery <span class="s">→</span> requirements <span class="s">→</span> roadmap <span class="s">→</span> delivery <span class="s">→</span> rollout <span class="s">→</span> adoption <span class="s">→</span> continuous improvement; <b>zoom out</b>: vision <span class="s">·</span> business direction <span class="s">vs</span> <b>zoom in</b>: workflows <span class="s">·</span> dependencies <span class="s">·</span> dashboards <span class="s">→</span> <b>actually works in practice</b></td></tr>
+      <tr><td class="c">Reporting</td><td>collected <span class="s">→</span> cleaned <span class="s">→</span> structured <span class="s">→</span> validated <span class="s">→</span> useful</td></tr>
+      <tr><td class="c">External</td><td>BP Pulse <span class="s">·</span> Shell <span class="s">·</span> MER <span class="s">·</span> TotalEnergies <span class="s">→</span> aligned <span class="s">·</span> <b>remove blockers early</b>; <b>external dev partners</b>: delivery boundaries <span class="s">·</span> acceptance criteria <span class="s">·</span> quality gates</td></tr>
+      <tr><td class="c">AI</td><td>where manual <span class="s">vs</span> where automated <span class="s">→</span> scalable</td></tr>
+      <tr><td class="c">Culture</td><td>small teams <span class="s">·</span> trust <span class="s">·</span> autonomy <span class="s">→</span> <b>step in · create structure · shipped software</b></td></tr>
+      <tr><td class="c">⚠ Ready</td><td><span class="warnline"><b>“dev background?”</b> → not a career developer <span class="s">BUT</span> APIs <span class="s">·</span> SQL <span class="s">·</span> GCP/Firebase prototypes <span class="s">→</span> <b>speak dev language · challenge technical decisions</b></span></td></tr>
+    </table>
+  </div>
+
+  <div class="card section-b">
+    <div class="qt">8 · AI experience &amp; view <span class="tag">B</span></div>
+    <div class="skel">Delivery → Prototyping → Learning → View → AI = stakeholder</div>
+    <table>
+      <tr><td class="c">Delivery</td><td>hotline: knowledge base + <b>RAG</b> <span class="s">→</span> quality <span class="s">·</span> validation <span class="s">·</span> escalation <span class="s">·</span> adoption <span class="s">→</span> <span class="n">50% automation</span> <span class="w">⚠ ticket rule</span></td></tr>
+      <tr><td class="c">Proto</td><td>GCP/Firebase <span class="s">·</span> internal tools when AI can solve a practical problem</td></tr>
+      <tr><td class="c">Learning</td><td>Claude <span class="s">·</span> Gemini daily <span class="s">·</span> <span class="g">AI-900</span></td></tr>
+      <tr><td class="c">View</td><td><b>AI is only valuable inside a real workflow</b> <span class="s">·</span> <b>a good demo is not enough</b> <span class="s">→</span> data <span class="s">·</span> outcomes <span class="s">·</span> human oversight <span class="s">·</span> trust; regulated <span class="s">→</span> governance <b>designed in from the beginning</b></td></tr>
+      <tr><td class="c">Stance</td><td><b>AI = another stakeholder</b>: instructions <span class="s">·</span> context <span class="s">BUT</span> challenge output <span class="s">→</span> hallucination <span class="s">→</span> RAG grounds <span class="s">BUT</span> <b>ask for sources · check the original myself</b> <span class="s">→</span> <b>final decision under control</b></td></tr>
+    </table>
+  </div>
+
+  <div class="card section-b">
+    <div class="qt">9 · Career goal <span class="tag">B</span></div>
+    <div class="skel">Direction ≠ rigid plan → 1 → 2 → 3 → Sum</div>
+    <table>
+      <tr><td class="c">Frame</td><td>AI moves fast <span class="s">→</span> clear <b>direction</b>, not a rigid 3–5 yr plan</td></tr>
+      <tr><td class="c">1</td><td>a team that <b>truly builds products</b> <span class="s">→</span> <b>connecting the dots</b> <span class="s">·</span> like <b>decorating your own home</b> over a lifetime</td></tr>
+      <tr><td class="c">2</td><td>keep learning <span class="s">→</span> AI’s surprises <span class="s">·</span> disappointments <span class="s">→</span> <b>wise judgment on real value</b></td></tr>
+      <tr><td class="c">3</td><td>ideas <span class="s">→</span> reality: Auckland parking idea <span class="s">→</span> JustPark launched later <span class="w">⚠ cap 30s · say “built &amp; deployed small products”, not “vibe-coded”</span></td></tr>
+      <tr><td class="c">Sum</td><td>in the AI era <b>everyone can become a builder</b> <span class="s">→</span> keep building <span class="s">·</span> stay curious</td></tr>
+    </table>
+  </div>
+
+  <div class="card section-b">
+    <div class="qt">10 · Communication &amp; being managed <span class="tag">B</span></div>
+    <div class="skel">Style → Context → Trust → Rhythm → Team</div>
+    <table>
+      <tr><td class="c">Style</td><td><b>direct · transparent · open</b> <span class="s">→</span> listen first <span class="s">→</span> root cause; feedback <span class="s">≠</span> personal judgment; adapt format <span class="s">→</span> flowcharts <span class="s">·</span> prototypes <span class="s">·</span> demos <span class="s">→</span> <b>visual is clearer than words</b></td></tr>
+      <tr><td class="c">Context</td><td><b>clear context at the beginning</b>: goal <span class="s">·</span> constraints <span class="s">·</span> <b>what success looks like</b></td></tr>
+      <tr><td class="c">Trust</td><td><b>trust and room to execute</b> <span class="s">·</span> comfortable with ambiguity <span class="s">BUT</span> <b>solving the right problem</b></td></tr>
+      <tr><td class="c">Rhythm</td><td>quick alignment when things change <span class="s">·</span> <b>stable communication rhythm</b> <span class="s">·</span> honest review</td></tr>
+      <tr><td class="c">Team</td><td><b>a learning team</b> <span class="s">→</span> share tools <span class="s">·</span> regulation updates <span class="s">→</span> improve together</td></tr>
+    </table>
+  </div>
+
+  <!-- D -->
+  <div class="card section-d">
+    <div class="qt">Q→ · My questions <span class="tag">D · pick 2</span></div>
+    <div class="skel">Erwin → Anyone → Robbert (+ go-live)</div>
+    <table>
+      <tr><td class="c">Q1 Erwin</td><td><span class="n">2</span> internal + <span class="n">2</span> external partners <span class="s">→</span> <b>internalize capability</b> <span class="s">vs</span> <b>reduce platform dependency</b> <span class="s">→</span> <b>“two very different roadmaps for me as a PO”</b></td></tr>
+      <tr><td class="c">Q2 Any</td><td><b>reporting is seasonal</b> <span class="s">→</span> renewal right after season ends <span class="s">→</span> when clients hesitate — why? <span class="s">→</span> ESG Collect = <b>year-round value</b></td></tr>
+      <tr><td class="c">Q3 Robbert</td><td>ESG Collect data entry: <b>role-based manual capture</b> + evidence / sign-off <span class="s">vs</span> <b>system-to-system APIs</b>; charging: <b>human-validated vs automated feeds</b> <span class="s">→</span> <b>audit trail needs human accountability</b></td></tr>
+      <tr><td class="c">Q0 Open</td><td><span class="w">⚠</span> JD said go-live end of June <span class="s">→</span> <b>ask current status first</b> — natural opener, shows JD attention</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<div class="risks">
+  <span><b>⚠ NL yrs</b> = one number, <span class="n">“almost 3”</span></span>
+  <span><b>⚠ tickets</b>: ops <span class="n">1,000+/wk</span> → AI <span class="n">50% L1</span></span>
+  <span><b>⚠ PO yrs</b>: “3+ across XGATE + Autel + current”</span>
+  <span><b>[核实]</b> Chanel · Harbour City · go-live status</span>
+</div>
+
+</body>
+</html>
