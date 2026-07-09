@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tangelo — Product Flows</title>
+<style>
+  :root{
+    --navy:#1B2A4A;      /* key phrases */
+    --teal:#0E7C7B;      /* numbers */
+    --orange:#E07A2F;    /* structural connectors */
+    --purple:#6B4E9B;    /* logical relationships */
+    --amber-bg:#FFF3D6;  /* Tangelo-relevant highlight */
+    --amber-bd:#E8B84B;
+    --ink:#2A2F3A;
+    --muted:#6A7280;
+    --line:#E3E7ED;
+    --bg:#F7F8FA;
+    --card:#FFFFFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"Segoe UI","Avenir Next",-apple-system,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);
+    line-height:1.45;padding:28px 20px 60px;
+    max-width:1080px;margin:0 auto;
+  }
+  header{margin-bottom:26px}
+  .doc-title{
+    font-size:1.55rem;font-weight:700;color:var(--navy);
+    letter-spacing:.2px;
+  }
+  .doc-sub{
+    margin-top:6px;font-size:.92rem;color:var(--muted);
+  }
+  .strategy-band{
+    margin-top:14px;background:var(--amber-bg);border:1px solid var(--amber-bd);
+    border-radius:10px;padding:12px 16px;font-size:.95rem;
+  }
+  .strategy-band b{color:var(--navy)}
+  .strategy-band .arrow{color:var(--orange);font-weight:700}
+
+  section{margin-top:38px}
+  .sec-head{
+    display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+    border-bottom:2px solid var(--navy);padding-bottom:8px;margin-bottom:16px;
+  }
+  .sec-title{font-size:1.15rem;font-weight:700;color:var(--navy)}
+  .sec-meta{font-size:.83rem;color:var(--muted)}
+  .sec-meta .num{color:var(--teal);font-weight:700}
+
+  /* flow rail */
+  .rail{
+    display:flex;align-items:stretch;gap:0;overflow-x:auto;
+    padding:6px 2px 14px;
+  }
+  .step{
+    min-width:172px;flex:1;background:var(--card);
+    border:1px solid var(--line);border-top:4px solid var(--navy);
+    border-radius:10px;padding:12px 13px;
+  }
+  .step h3{
+    font-size:.86rem;letter-spacing:.6px;color:var(--navy);
+    text-transform:uppercase;margin-bottom:7px;
+  }
+  .step p{font-size:.83rem;margin-bottom:5px}
+  .step .chunk{color:var(--ink)}
+  .step .num{color:var(--teal);font-weight:700}
+  .step .rel{color:var(--purple)}
+  .step .hl{background:var(--amber-bg);border-radius:4px;padding:0 3px}
+  .conn{
+    align-self:center;color:var(--orange);font-size:1.3rem;font-weight:700;
+    padding:0 8px;flex:0 0 auto;
+  }
+  .loopback{
+    margin-top:2px;font-size:.83rem;color:var(--purple);
+    padding:8px 12px;background:#F3EFFA;border:1px dashed var(--purple);
+    border-radius:8px;
+  }
+  .loopback b{color:var(--purple)}
+
+  /* fact strips */
+  .facts{
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;
+  }
+  .fact{
+    font-size:.8rem;background:var(--card);border:1px solid var(--line);
+    border-radius:999px;padding:5px 12px;color:var(--ink);
+  }
+  .fact .num{color:var(--teal);font-weight:700}
+  .fact.hl{background:var(--amber-bg);border-color:var(--amber-bd)}
+
+  /* modules grid for line 3 */
+  .modules{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+  .module{
+    background:var(--card);border:1px solid var(--line);
+    border-top:4px solid var(--purple);border-radius:10px;padding:14px 15px;
+  }
+  .module h3{font-size:.95rem;color:var(--navy);margin-bottom:8px}
+  .miniflow{font-size:.83rem;margin-bottom:9px}
+  .miniflow .a{color:var(--orange);font-weight:700}
+  .module ul{list-style:none;margin-top:4px}
+  .module li{
+    font-size:.82rem;padding-left:14px;position:relative;margin-bottom:4px;
+  }
+  .module li::before{content:"▸";position:absolute;left:0;color:var(--orange)}
+  .module .roadlbl{
+    font-size:.72rem;letter-spacing:.8px;text-transform:uppercase;
+    color:var(--muted);margin-top:8px;margin-bottom:4px;
+  }
+  .philosophy{
+    margin-top:14px;background:var(--amber-bg);border:1px solid var(--amber-bd);
+    border-radius:10px;padding:11px 15px;font-size:.9rem;
+  }
+  .philosophy b{color:var(--navy)}
+
+  /* competitor strip */
+  .comp{
+    margin-top:14px;background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--teal);border-radius:8px;padding:11px 14px;
+    font-size:.84rem;
+  }
+  .comp b{color:var(--navy)}
+  .comp .diff{color:var(--purple)}
+  .comp-lbl{
+    font-size:.72rem;letter-spacing:.8px;text-transform:uppercase;
+    color:var(--muted);display:block;margin-bottom:4px;
+  }
+
+  footer{
+    margin-top:44px;font-size:.75rem;color:var(--muted);
+    border-top:1px solid var(--line);padding-top:12px;
+  }
+  @media (max-width:640px){
+    .rail{flex-direction:column}
+    .conn{transform:rotate(90deg);align-self:flex-start;padding:2px 0 2px 70px}
+    .step{min-width:unset}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="doc-title">Tangelo — Three Product Lines, End-to-End Flows</div>
+  <div class="doc-sub">Study card · sources: on-demand demos, Tangelo Talks, LSE interviews, CPO conference talks, first interview</div>
+  <div class="strategy-band">
+    One strategy: <b>Collect &amp; Report</b> — close the process gap between upstream ESG data collection and the external report.
+    <b>ESG Collect</b> <span class="arrow">→</span> seamless push <span class="arrow">→</span> <b>Reporting Platform</b>, tagging carried from source, audit trail end-to-end.
+  </div>
+</header>
+
+<!-- ============ LINE 1 ============ -->
+<section>
+  <div class="sec-head">
+    <div class="sec-title">Line 1 · Corporate Reporting Platform</div>
+    <div class="sec-meta">flagship · <span class="num">15 yrs</span> · Erwin's domain · listed companies, financial services</div>
+  </div>
+
+  <div class="rail">
+    <div class="step">
+      <h3>1 · Build</h3>
+      <p class="chunk">design guidelines configured <span style="color:var(--orange)">→</span> teams build directly</p>
+      <p class="rel">removes desktop-publishing bottleneck</p>
+      <p class="chunk">create · expand · amend anytime</p>
+      <p class="chunk"><span class="hl">roll forward</span> to new reporting period</p>
+    </div>
+    <div class="conn">→</div>
+    <div class="step">
+      <h3>2 · Connect</h3>
+      <p class="chunk">link tables · charts · in-text numbers</p>
+      <p class="chunk">sync when new data arrives</p>
+      <p class="rel">3 input tiers: Excel upload → secure FTP hot folder → push API</p>
+      <p class="chunk">flexibility <span style="color:var(--orange)">→</span> enterprise integration</p>
+    </div>
+    <div class="conn">→</div>
+    <div class="step">
+      <h3>3 · Tag</h3>
+      <p class="chunk"><span class="hl">XBRL native, not bolt-on</span></p>
+      <p class="chunk">ESEF supported · ESRS-ready when regulator finalises</p>
+      <p class="chunk">NL: SBR · Dutch GAAP · IFRS taxonomies</p>
+      <p class="rel">auditor asks → change tagging + extensions on the spot → new filing package instantly</p>
+    </div>
+    <div class="conn">→</div>
+    <div class="step">
+      <h3>4 · Review</h3>
+      <p class="chunk">version management · compare any two</p>
+      <p class="chunk">section-level privileges · progress tracking</p>
+      <p class="rel">reviewer role: comment + text proposals → workflow to editors</p>
+      <p class="chunk"><span class="hl">audit trail</span>: every content + role change</p>
+    </div>
+    <div class="conn">→</div>
+    <div class="step">
+      <h3>5 · Publish</h3>
+      <p class="chunk"><span class="hl">single source → multi-channel</span></p>
+      <p class="chunk">print-ready PDF · interactive microsite · XBRL</p>
+      <p class="chunk">live preview: edit → see effect immediately</p>
+      <p class="chunk">simultaneous PDF + microsite publish</p>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="fact hl">Philips among first clients</div>
+    <div class="fact"><span class="num">50+</span> EU clients through CSRD wave 1</div>
+    <div class="fact"><span class="num">0</span> missed publication deadlines, ever</div>
+    <div class="fact">seasonal cycle: Sept build-up → Mar/Apr publish</div>
+    <div class="fact">CSRD added <span class="num">50–70</span> pages avg, up to <span class="num">100</span></div>
+  </div>
+
+  <div class="comp">
+    <span class="comp-lbl">market scan</span>
+    <b>Workiva</b> — disclosure management origin (US 10-K), biggest true rival, also end-to-end ESG ·
+    <b>CtrlPrint</b> — InDesign/InCopy remote editing, text edits only ·
+    bolt-on taggers: <b>ParsePort · IRIS CARBON · AMANA</b><br>
+    <span class="diff">Tangelo wedge: design quality without compromise + native tagging + single-source multi-channel</span>
+  </div>
+</section>
+
+<!-- ============ LINE 2 ============ -->
+<section>
+  <div class="sec-head">
+    <div class="sec-title">Line 2 · ESG Collect</div>
+    <div class="sec-meta">companion product · <span class="num">1.5 yrs</span> · Robbert PO → PM · go-live end <span class="num">June 2026</span></div>
+  </div>
+
+  <div class="rail">
+    <div class="step">
+      <h3>1 · Scoping</h3>
+      <p class="rel">double materiality assessment → which disclosures in scope</p>
+      <p class="chunk">dimension setup: gender × country example</p>
+      <p class="chunk">conditional disclosures · calculations · own disclosures</p>
+      <p class="chunk"><span class="hl">first-time-right</span> data model</p>
+    </div>
+    <div class="conn">→</div>
+    <div class="step">
+      <h3>2 · Assign</h3>
+      <p class="rel">governance first: who delivers what, where</p>
+      <p class="chunk">central coordinator + dozens–hundreds of contributors</p>
+      <p class="chunk">tasks + timeframe: year-end + <span class="num">2–3</span> months</p>
+    </div>
+    <div class="conn">→</div>
+    <div class="step">
+      <h3>3 · Collect &amp; Track</h3>
+      <p class="chunk">progress per topic · user · task</p>
+      <p class="chunk">traffic lights · automatic reminders</p>
+      <p class="rel">coordination time disappears — no email ping-pong</p>
+      <p class="chunk">data + narrative disclosures · evidence attached</p>
+    </div>
+    <div class="conn">→</div>
+    <div class="step">
+      <h3>4 · Assemble</h3>
+      <p class="chunk"><span class="hl">table builder</span> — "Power BI-ish"</p>
+      <p class="chunk">ESRS guidance tables + custom tables</p>
+      <p class="chunk">draft data flows into report anytime</p>
+    </div>
+    <div class="conn">→</div>
+    <div class="step">
+      <h3>5 · To Report</h3>
+      <p class="chunk"><span class="hl">seamless push</span> into Tangelo report</p>
+      <p class="chunk">metrics + narrative both linked</p>
+      <p class="rel">tagging carried from source → XBRL-ready</p>
+      <p class="chunk">audit trail: who captured · reviewed · evidence</p>
+    </div>
+  </div>
+
+  <div class="loopback">
+    <b>⟲ Yearly loop:</b> evaluate governance + process → re-run double materiality → <b>roll forward</b> resets tasks, keeps historic data + narrative for reuse
+  </div>
+
+  <div class="facts">
+    <div class="fact">standards: ESRS original + simplified + VSME</div>
+    <div class="fact">ISSB as-issued + local: HK <span class="num">2</span>-phase · AU · SG · UK</div>
+    <div class="fact hl">carbon calc out of scope → integrate specialist calculators</div>
+    <div class="fact">roadmap: performance mgmt (targets · monthly dashboards) · supplier collection</div>
+    <div class="fact">team: <span class="num">2</span> internal dev + external <span class="num">~8</span> dev / <span class="num">2</span> QA ≈ <span class="num">10</span> FTE</div>
+  </div>
+
+  <div class="comp">
+    <span class="comp-lbl">market scan</span>
+    <b>Workiva ESG</b> · <b>Position Green</b> (Nordics) · <b>Novisto</b> · <b>Osapiens</b> (DE) · <b>Coolset</b> (NL)<br>
+    <span class="diff">Tangelo wedge: standards-aware data model built-in + collect→disclosure with no gap — others end at Excel export</span>
+  </div>
+</section>
+
+<!-- ============ LINE 3 ============ -->
+<section>
+  <div class="sec-head">
+    <div class="sec-title">Line 3 · New Capability Modules on the Reporting Platform</div>
+    <div class="sec-meta">new PO vacancy scope · cross-team enabler · innovation-lab lead dev (AI) · data-layer dev · DevOps</div>
+  </div>
+
+  <div class="modules">
+    <div class="module">
+      <h3>A · AI Assistant</h3>
+      <p class="miniflow">select text <span class="a">→</span> secure in-editor sidebar <span class="a">→</span> intent recognition <span class="a">→</span> RAG retrieval: client knowledge base + regulatory texts (ESRS · GRI · ISSB) <span class="a">→</span> suggestion preview <span class="a">→</span> user approves <span class="a">→</span> audit trail entry</p>
+      <div class="roadlbl">shipped / shipping</div>
+      <ul>
+        <li>shorten · rewrite · table ↔ paragraphs · formatting fixes</li>
+      </ul>
+      <div class="roadlbl">roadmap</div>
+      <ul>
+        <li>chapter-level rewrite · suggest-and-replace UX</li>
+        <li>consistency + cross-reference + tone-of-voice checks</li>
+        <li>assisted XBRL tagging: concept suggestions · extension anchoring · block tagging</li>
+        <li>image micro-edits · translation of near-final drafts</li>
+        <li>post-publish report Q&amp;A (cm.com case: ask-AI box on annual report)</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <h3>B · Data Integration Layer</h3>
+      <p class="miniflow">today: <span class="a">~200</span> source systems <span class="a">→</span> data warehouse <span class="a">→</span> Excel last mile</p>
+      <p class="miniflow">target: modern finance systems <span class="a">→</span> REST / JSON APIs <span class="a">→</span> disclosures calculated in-platform</p>
+      <ul>
+        <li>financial statements · remuneration data first candidates</li>
+        <li>API contracts + acceptance criteria = PO's daily work</li>
+        <li>B2B, third-party enabler focus · little end-user surface</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <h3>C · Cloud Development</h3>
+      <p class="miniflow">today: private cloud + AWS + GCP in parallel <span class="a">→</span> target: simplified setup + provisioning</p>
+      <ul>
+        <li>infra-focused · internal-facing</li>
+        <li>DevOps engineer as key partner</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="philosophy">
+    Design philosophy across all AI work: <b>assisted, not automated</b> — suggested by AI, approved by the user, every action auditable. The auditor must never hear "AI came up with that."
+  </div>
+
+  <div class="comp">
+    <span class="comp-lbl">market scan</span>
+    capability race rather than product race — benchmark: <b>Workiva</b> AI features · gen-AI document tooling entering reporting space<br>
+    <span class="diff">Tangelo wedge: AI inside the secure environment + grounded in client corpus + regulatory texts + full auditability</span>
+  </div>
+</section>
+
+<footer>
+  Compiled July 2026 · flows from Tangelo official demo &amp; interview material · market scan from general industry knowledge, verify before citing in interview
+</footer>
+
+</body>
+</html>
